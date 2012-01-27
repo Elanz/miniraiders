@@ -38,7 +38,7 @@
         _bossHealth.type = kCCProgressTimerTypeBar;
         _bossHealth.midpoint = ccp(0,winSize.height-30);
         _bossHealth.barChangeRate = ccp(1,0);
-        _bossHealth.position = ccp((winSize.width/2)+1,winSize.height-31);
+        _bossHealth.position = ccp((winSize.width/2),winSize.height-31);
         [self addChild:_bossHealth];
         
         [self scheduleUpdate];

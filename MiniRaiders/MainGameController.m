@@ -35,8 +35,10 @@
     [_mainGameScene addChild:_backgroundLayer];
     [_mainGameScene addChild:_gameplayLayer];
     [_mainGameScene addChild:_hudLayer];
+    [_mainGameScene addChild:self];
     
     _theBoss = [[Boss alloc] initWithGameController:self];
+    
     [self start];
 	return _mainGameScene;
 }
@@ -44,11 +46,17 @@
 - (void) start
 {
     self.gameStartTime = [NSDate date];
+    [self schedule:@selector(AITick:) interval:0.5f];
 }
 
 - (void) doWin
 {
     [[CCDirector sharedDirector] replaceScene: [MainMenuLayer scene]]; 
+}
+
+- (void) AITick:(ccTime)dt
+{
+    [_theBoss AITick:dt];
 }
 
 @end

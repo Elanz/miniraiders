@@ -14,7 +14,7 @@
 @class GameHudLayer;
 @class Boss;
 
-@interface MainGameController : NSObject {
+@interface MainGameController : CCNode {
     BackgroundLayer * _backgroundLayer;
     GameplayLayer * _gameplayLayer;
     GameHudLayer * _hudLayer;
@@ -31,5 +31,6 @@
 - (CCScene *) scene;
 - (void) doWin;
 - (void) start;
+- (void) AITick:(ccTime)dt;
 
 @end

@@ -42,10 +42,5 @@
     gameController = [[MainGameController alloc] init];
     [[CCDirector sharedDirector] replaceScene:[gameController scene]];
 }
-                                 
-- (void) dealloc
-{
-	[super dealloc];
-}
 
 @end

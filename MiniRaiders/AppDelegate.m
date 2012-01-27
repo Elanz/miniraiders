@@ -6,7 +6,7 @@
 //  Copyright 200Monkeys 2012. All rights reserved.
 //
 
-#import "cocos2d.h"
+#import "libs/cocos2d/cocos2d.h"
 
 #import "AppDelegate.h"
 #import "MainMenuLayer.h"
@@ -135,11 +135,4 @@
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
 
-- (void) dealloc
-{
-	[window_ release];
-	[navController_ release];
-
-	[super dealloc];
-}
 @end
