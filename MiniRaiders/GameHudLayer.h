@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@class MainGameController;
+@class BossAttackController;
 
 @interface GameHudLayer : CCLayer {
     CCLabelTTF * _timeLabel;
@@ -18,8 +18,8 @@
     CCProgressTimer * _bossHealth;
 }
 
-@property (nonatomic, assign) MainGameController * gameController;
+@property (nonatomic, assign) BossAttackController * bossAttackController;
 
-- (id) initWithGameController:(MainGameController*)controller;
+- (id) initWithGameController:(BossAttackController*)controller;
 
 @end

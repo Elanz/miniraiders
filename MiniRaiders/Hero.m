@@ -10,4 +10,7 @@
 
 @implementation Hero
 
+@synthesize XP;
+@synthesize Level;
+
 @end

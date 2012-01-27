@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Entity.h"
 
-@interface Hero : NSObject
+@interface Hero : Entity
+
+@property (nonatomic, readwrite) int XP;
+@property (nonatomic, readwrite) int Level;
 
 @end

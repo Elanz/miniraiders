@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class BossAttackController;
+
 @interface Guild : NSObject{
-    
+    BossAttackController * _bossAttackController;
 }
 
 @property (nonatomic, retain) NSString * Name;
 @property (nonatomic, retain) NSMutableArray * Heroes;
 @property (nonatomic, readwrite) int Fame;
+
+- (void) prepareForBossAttack:(BossAttackController*)controller;
++ (Guild*) sharedGuild;
 
 @end

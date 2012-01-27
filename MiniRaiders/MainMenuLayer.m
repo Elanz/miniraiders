@@ -7,8 +7,7 @@
 //
 
 #import "MainMenuLayer.h"
-#import "AppDelegate.h"
-#import "MainGameController.h"
+#import "BossAttackController.h"
 
 #pragma mark - MainMenuLayer
 
@@ -39,7 +38,7 @@
 
 -(void)startGame
 {
-    gameController = [[MainGameController alloc] init];
+    gameController = [[BossAttackController alloc] init];
     [[CCDirector sharedDirector] replaceScene:[gameController scene]];
 }
 

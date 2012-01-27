@@ -9,18 +9,16 @@
 /* Begin PBXBuildFile section */
 		725F26B214D1CD8E002D92CC /* start_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F26B114D1CD8E002D92CC /* start_btn_up.png */; };
 		725F26B414D1CECB002D92CC /* start_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F26B314D1CECB002D92CC /* start_btn_down.png */; };
-		725F26B814D1D363002D92CC /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26B714D1D363002D92CC /* MainGameController.m */; };
-		725F26BB14D1D3F2002D92CC /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26BA14D1D3F2002D92CC /* BackgroundLayer.m */; };
-		725F26BE14D1D413002D92CC /* GameplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26BD14D1D413002D92CC /* GameplayLayer.m */; };
-		725F26C114D1D42D002D92CC /* GameHudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26C014D1D42D002D92CC /* GameHudLayer.m */; };
+		725F26B814D1D363002D92CC /* BossAttackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26B714D1D363002D92CC /* BossAttackController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		725F26BB14D1D3F2002D92CC /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26BA14D1D3F2002D92CC /* BackgroundLayer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		725F26BE14D1D413002D92CC /* GameplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26BD14D1D413002D92CC /* GameplayLayer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		725F26C114D1D42D002D92CC /* GameHudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26C014D1D42D002D92CC /* GameHudLayer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		725F270514D1EF2D002D92CC /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 725F270414D1EF2D002D92CC /* iTunesArtwork */; };
 		725F270C14D20033002D92CC /* mainmenu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F270B14D20032002D92CC /* mainmenu_bg.png */; };
 		725F270F14D2070C002D92CC /* proto_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F270E14D2070C002D92CC /* proto_field.png */; };
 		725F271114D214DF002D92CC /* top_score_panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F271014D214DF002D92CC /* top_score_panel.png */; };
 		725F28B614D226AF002D92CC /* bosshealth.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F28B514D226AF002D92CC /* bosshealth.png */; };
-		725F28BA14D23DFB002D92CC /* boss1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 725F28B814D23DFB002D92CC /* boss1.plist */; };
-		725F28BB14D23DFB002D92CC /* boss1.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F28B914D23DFB002D92CC /* boss1.png */; };
-		725F28BE14D23EAA002D92CC /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F28BD14D23EA9002D92CC /* Boss.m */; };
+		725F28BE14D23EAA002D92CC /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F28BD14D23EA9002D92CC /* Boss.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72A3D53B14CF05FA00400D17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53A14CF05FA00400D17 /* QuartzCore.framework */; };
 		72A3D53D14CF05FA00400D17 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53C14CF05FA00400D17 /* OpenGLES.framework */; };
 		72A3D53F14CF05FA00400D17 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53E14CF05FA00400D17 /* OpenAL.framework */; };
@@ -50,12 +48,12 @@
 		72A3D57914CF05FB00400D17 /* PositionTextureColor.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 72A3D57814CF05FB00400D17 /* PositionTextureColor.fsh */; };
 		72A3D57B14CF05FB00400D17 /* PositionTextureColor.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 72A3D57A14CF05FB00400D17 /* PositionTextureColor.vsh */; };
 		72A3D57D14CF05FB00400D17 /* PositionTextureColorAlphaTest.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 72A3D57C14CF05FB00400D17 /* PositionTextureColorAlphaTest.fsh */; };
-		72A3D6BC14CF05FC00400D17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A3D6BB14CF05FC00400D17 /* main.m */; };
-		72A3D6BF14CF05FC00400D17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A3D6BE14CF05FC00400D17 /* AppDelegate.m */; };
-		72A3D6C214CF05FC00400D17 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A3D6C114CF05FC00400D17 /* MainMenuLayer.m */; };
-		72B12A7014D2EDAF006D8C66 /* Cocos2dUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B12A6F14D2EDAF006D8C66 /* Cocos2dUtility.m */; };
-		72B12A7514D3054A006D8C66 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B12A7414D3054A006D8C66 /* Hero.m */; };
-		72B12A7814D30574006D8C66 /* Guild.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B12A7714D30574006D8C66 /* Guild.m */; };
+		72A3D6BC14CF05FC00400D17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A3D6BB14CF05FC00400D17 /* main.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72A3D6BF14CF05FC00400D17 /* MiniRaidersDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A3D6BE14CF05FC00400D17 /* MiniRaidersDelegate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72A3D6C214CF05FC00400D17 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A3D6C114CF05FC00400D17 /* MainMenuLayer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72B12A7014D2EDAF006D8C66 /* Cocos2dUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B12A6F14D2EDAF006D8C66 /* Cocos2dUtility.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72B12A7514D3054A006D8C66 /* Warrior.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B12A7414D3054A006D8C66 /* Warrior.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72B12A7814D30574006D8C66 /* Guild.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B12A7714D30574006D8C66 /* Guild.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72B1321F14D3176C006D8C66 /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1314614D3176C006D8C66 /* CCAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72B1322014D3176C006D8C66 /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1314814D3176C006D8C66 /* CCActionCamera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		72B1322114D3176C006D8C66 /* CCActionEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B1314A14D3176C006D8C66 /* CCActionEase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -155,13 +153,19 @@
 		72B1327F14D3176C006D8C66 /* LICENSE_cocos2d.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72B1321C14D3176C006D8C66 /* LICENSE_cocos2d.txt */; };
 		72B1328014D3176C006D8C66 /* LICENSE_CocosDenshion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72B1321D14D3176C006D8C66 /* LICENSE_CocosDenshion.txt */; };
 		72B1328114D3176C006D8C66 /* LICENSE_Kazmath.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72B1321E14D3176C006D8C66 /* LICENSE_Kazmath.txt */; };
+		72B132AF14D32EDF006D8C66 /* sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72B132AD14D32EDF006D8C66 /* sprites.plist */; };
+		72B132B014D32EDF006D8C66 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B132AE14D32EDF006D8C66 /* sprites.png */; };
+		72B132B314D331DB006D8C66 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B214D331DA006D8C66 /* Entity.m */; };
+		72B132B614D33455006D8C66 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B514D33455006D8C66 /* Hero.m */; };
+		72B132B914D3359D006D8C66 /* Wizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B814D3359D006D8C66 /* Wizard.m */; };
+		72B132BC14D335F4006D8C66 /* Ranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BB14D335F4006D8C66 /* Ranger.m */; };
+		72B132BF14D3368F006D8C66 /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BE14D3368E006D8C66 /* MainGameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		725F26B114D1CD8E002D92CC /* start_btn_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_btn_up.png; path = Resources/gui/start_btn_up.png; sourceTree = "<group>"; };
 		725F26B314D1CECB002D92CC /* start_btn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_btn_down.png; path = Resources/gui/start_btn_down.png; sourceTree = "<group>"; };
-		725F26B614D1D363002D92CC /* MainGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameController.h; sourceTree = "<group>"; };
-		725F26B714D1D363002D92CC /* MainGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameController.m; sourceTree = "<group>"; };
+		725F26B714D1D363002D92CC /* BossAttackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BossAttackController.m; sourceTree = "<group>"; };
 		725F26B914D1D3F2002D92CC /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		725F26BA14D1D3F2002D92CC /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		725F26BC14D1D413002D92CC /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameplayLayer.h; sourceTree = "<group>"; };
@@ -173,8 +177,6 @@
 		725F270E14D2070C002D92CC /* proto_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = proto_field.png; path = Resources/fields/proto_field.png; sourceTree = "<group>"; };
 		725F271014D214DF002D92CC /* top_score_panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_score_panel.png; path = Resources/gui/top_score_panel.png; sourceTree = "<group>"; };
 		725F28B514D226AF002D92CC /* bosshealth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bosshealth.png; path = Resources/gui/bosshealth.png; sourceTree = "<group>"; };
-		725F28B814D23DFB002D92CC /* boss1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = boss1.plist; path = Resources/bosses/boss1.plist; sourceTree = "<group>"; };
-		725F28B914D23DFB002D92CC /* boss1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = boss1.png; path = Resources/bosses/boss1.png; sourceTree = "<group>"; };
 		725F28BC14D23EA9002D92CC /* Boss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boss.h; sourceTree = "<group>"; };
 		725F28BD14D23EA9002D92CC /* Boss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boss.m; sourceTree = "<group>"; };
 		72A3D53614CF05FA00400D17 /* MiniRaiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRaiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,14 +212,14 @@
 		72A3D57C14CF05FB00400D17 /* PositionTextureColorAlphaTest.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = PositionTextureColorAlphaTest.fsh; path = Shaders/PositionTextureColorAlphaTest.fsh; sourceTree = "<group>"; };
 		72A3D6BA14CF05FC00400D17 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		72A3D6BB14CF05FC00400D17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		72A3D6BD14CF05FC00400D17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		72A3D6BE14CF05FC00400D17 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		72A3D6BD14CF05FC00400D17 /* MiniRaidersDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniRaidersDelegate.h; sourceTree = "<group>"; };
+		72A3D6BE14CF05FC00400D17 /* MiniRaidersDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniRaidersDelegate.m; sourceTree = "<group>"; };
 		72A3D6C014CF05FC00400D17 /* MainMenuLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		72A3D6C114CF05FC00400D17 /* MainMenuLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
 		72B12A6E14D2EDAF006D8C66 /* Cocos2dUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos2dUtility.h; sourceTree = "<group>"; };
 		72B12A6F14D2EDAF006D8C66 /* Cocos2dUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cocos2dUtility.m; sourceTree = "<group>"; };
-		72B12A7314D3054A006D8C66 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
-		72B12A7414D3054A006D8C66 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		72B12A7314D3054A006D8C66 /* Warrior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Warrior.h; sourceTree = "<group>"; };
+		72B12A7414D3054A006D8C66 /* Warrior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Warrior.m; sourceTree = "<group>"; };
 		72B12A7614D30574006D8C66 /* Guild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guild.h; sourceTree = "<group>"; };
 		72B12A7714D30574006D8C66 /* Guild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guild.m; sourceTree = "<group>"; };
 		72B1314514D3176C006D8C66 /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
@@ -427,6 +429,19 @@
 		72B1321C14D3176C006D8C66 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_cocos2d.txt; path = libs/LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		72B1321D14D3176C006D8C66 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_CocosDenshion.txt; path = libs/LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		72B1321E14D3176C006D8C66 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE_Kazmath.txt; path = libs/LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		72B132AC14D31FB1006D8C66 /* BossAttackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossAttackController.h; sourceTree = "<group>"; };
+		72B132AD14D32EDF006D8C66 /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sprites.plist; path = Resources/sprites.plist; sourceTree = "<group>"; };
+		72B132AE14D32EDF006D8C66 /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sprites.png; path = Resources/sprites.png; sourceTree = "<group>"; };
+		72B132B114D331D9006D8C66 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		72B132B214D331DA006D8C66 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		72B132B414D33455006D8C66 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		72B132B514D33455006D8C66 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		72B132B714D3359D006D8C66 /* Wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wizard.h; sourceTree = "<group>"; };
+		72B132B814D3359D006D8C66 /* Wizard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wizard.m; sourceTree = "<group>"; };
+		72B132BA14D335F4006D8C66 /* Ranger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranger.h; sourceTree = "<group>"; };
+		72B132BB14D335F4006D8C66 /* Ranger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ranger.m; sourceTree = "<group>"; };
+		72B132BD14D3368E006D8C66 /* MainGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainGameController.h; path = ../MainGameController.h; sourceTree = "<group>"; };
+		72B132BE14D3368E006D8C66 /* MainGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainGameController.m; path = ../MainGameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,15 +484,6 @@
 			name = fields;
 			sourceTree = "<group>";
 		};
-		725F28B714D23DE7002D92CC /* bosses */ = {
-			isa = PBXGroup;
-			children = (
-				725F28B814D23DFB002D92CC /* boss1.plist */,
-				725F28B914D23DFB002D92CC /* boss1.png */,
-			);
-			name = bosses;
-			sourceTree = "<group>";
-		};
 		725F28C114D23EE9002D92CC /* bosses */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +491,21 @@
 				725F28BD14D23EA9002D92CC /* Boss.m */,
 			);
 			name = bosses;
+			sourceTree = "<group>";
+		};
+		727B9DC414D33B8C0059BC07 /* bossAttack */ = {
+			isa = PBXGroup;
+			children = (
+				72B132AC14D31FB1006D8C66 /* BossAttackController.h */,
+				725F26B714D1D363002D92CC /* BossAttackController.m */,
+				725F26B914D1D3F2002D92CC /* BackgroundLayer.h */,
+				725F26BA14D1D3F2002D92CC /* BackgroundLayer.m */,
+				725F26BC14D1D413002D92CC /* GameplayLayer.h */,
+				725F26BD14D1D413002D92CC /* GameplayLayer.m */,
+				725F26BF14D1D42D002D92CC /* GameHudLayer.h */,
+				725F26C014D1D42D002D92CC /* GameHudLayer.m */,
+			);
+			name = bossAttack;
 			sourceTree = "<group>";
 		};
 		72A3D52B14CF05FA00400D17 = {
@@ -523,22 +544,19 @@
 		72A3D54C14CF05FA00400D17 /* MiniRaiders */ = {
 			isa = PBXGroup;
 			children = (
+				727B9DC414D33B8C0059BC07 /* bossAttack */,
 				72B12A7214D3051A006D8C66 /* heroes */,
 				725F28C114D23EE9002D92CC /* bosses */,
-				72A3D6BD14CF05FC00400D17 /* AppDelegate.h */,
-				72A3D6BE14CF05FC00400D17 /* AppDelegate.m */,
+				72B132B114D331D9006D8C66 /* Entity.h */,
+				72B132B214D331DA006D8C66 /* Entity.m */,
+				72A3D6BD14CF05FC00400D17 /* MiniRaidersDelegate.h */,
+				72A3D6BE14CF05FC00400D17 /* MiniRaidersDelegate.m */,
 				72A3D6C014CF05FC00400D17 /* MainMenuLayer.h */,
 				72A3D6C114CF05FC00400D17 /* MainMenuLayer.m */,
-				725F26B614D1D363002D92CC /* MainGameController.h */,
-				725F26B714D1D363002D92CC /* MainGameController.m */,
+				72B132BD14D3368E006D8C66 /* MainGameController.h */,
+				72B132BE14D3368E006D8C66 /* MainGameController.m */,
 				72B12A7614D30574006D8C66 /* Guild.h */,
 				72B12A7714D30574006D8C66 /* Guild.m */,
-				725F26B914D1D3F2002D92CC /* BackgroundLayer.h */,
-				725F26BA14D1D3F2002D92CC /* BackgroundLayer.m */,
-				725F26BC14D1D413002D92CC /* GameplayLayer.h */,
-				725F26BD14D1D413002D92CC /* GameplayLayer.m */,
-				725F26BF14D1D42D002D92CC /* GameHudLayer.h */,
-				725F26C014D1D42D002D92CC /* GameHudLayer.m */,
 				72B12A6E14D2EDAF006D8C66 /* Cocos2dUtility.h */,
 				72B12A6F14D2EDAF006D8C66 /* Cocos2dUtility.m */,
 				72A3D54D14CF05FA00400D17 /* Resources */,
@@ -552,9 +570,10 @@
 		72A3D54D14CF05FA00400D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				725F28B714D23DE7002D92CC /* bosses */,
 				725F270D14D206F6002D92CC /* fields */,
 				725F26B014D1CD73002D92CC /* gui */,
+				72B132AD14D32EDF006D8C66 /* sprites.plist */,
+				72B132AE14D32EDF006D8C66 /* sprites.png */,
 				72A3D54E14CF05FA00400D17 /* Default.png */,
 				72A3D55014CF05FA00400D17 /* fps_images.png */,
 				72A3D55214CF05FA00400D17 /* fps_images-hd.png */,
@@ -613,8 +632,14 @@
 		72B12A7214D3051A006D8C66 /* heroes */ = {
 			isa = PBXGroup;
 			children = (
-				72B12A7314D3054A006D8C66 /* Hero.h */,
-				72B12A7414D3054A006D8C66 /* Hero.m */,
+				72B132BA14D335F4006D8C66 /* Ranger.h */,
+				72B132BB14D335F4006D8C66 /* Ranger.m */,
+				72B12A7314D3054A006D8C66 /* Warrior.h */,
+				72B12A7414D3054A006D8C66 /* Warrior.m */,
+				72B132B714D3359D006D8C66 /* Wizard.h */,
+				72B132B814D3359D006D8C66 /* Wizard.m */,
+				72B132B414D33455006D8C66 /* Hero.h */,
+				72B132B514D33455006D8C66 /* Hero.m */,
 			);
 			name = heroes;
 			sourceTree = "<group>";
@@ -997,13 +1022,13 @@
 				725F270F14D2070C002D92CC /* proto_field.png in Resources */,
 				725F271114D214DF002D92CC /* top_score_panel.png in Resources */,
 				725F28B614D226AF002D92CC /* bosshealth.png in Resources */,
-				725F28BA14D23DFB002D92CC /* boss1.plist in Resources */,
-				725F28BB14D23DFB002D92CC /* boss1.png in Resources */,
 				72B1327114D3176C006D8C66 /* ChangeLog in Resources */,
 				72B1327214D3176C006D8C66 /* CMakeLists.txt in Resources */,
 				72B1327F14D3176C006D8C66 /* LICENSE_cocos2d.txt in Resources */,
 				72B1328014D3176C006D8C66 /* LICENSE_CocosDenshion.txt in Resources */,
 				72B1328114D3176C006D8C66 /* LICENSE_Kazmath.txt in Resources */,
+				72B132AF14D32EDF006D8C66 /* sprites.plist in Resources */,
+				72B132B014D32EDF006D8C66 /* sprites.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1015,15 +1040,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				72A3D6BC14CF05FC00400D17 /* main.m in Sources */,
-				72A3D6BF14CF05FC00400D17 /* AppDelegate.m in Sources */,
+				72A3D6BF14CF05FC00400D17 /* MiniRaidersDelegate.m in Sources */,
 				72A3D6C214CF05FC00400D17 /* MainMenuLayer.m in Sources */,
-				725F26B814D1D363002D92CC /* MainGameController.m in Sources */,
+				725F26B814D1D363002D92CC /* BossAttackController.m in Sources */,
 				725F26BB14D1D3F2002D92CC /* BackgroundLayer.m in Sources */,
 				725F26BE14D1D413002D92CC /* GameplayLayer.m in Sources */,
 				725F26C114D1D42D002D92CC /* GameHudLayer.m in Sources */,
 				725F28BE14D23EAA002D92CC /* Boss.m in Sources */,
 				72B12A7014D2EDAF006D8C66 /* Cocos2dUtility.m in Sources */,
-				72B12A7514D3054A006D8C66 /* Hero.m in Sources */,
+				72B12A7514D3054A006D8C66 /* Warrior.m in Sources */,
 				72B12A7814D30574006D8C66 /* Guild.m in Sources */,
 				72B1321F14D3176C006D8C66 /* CCAction.m in Sources */,
 				72B1322014D3176C006D8C66 /* CCActionCamera.m in Sources */,
@@ -1119,6 +1144,11 @@
 				72B1327C14D3176C006D8C66 /* vec2.c in Sources */,
 				72B1327D14D3176C006D8C66 /* vec3.c in Sources */,
 				72B1327E14D3176C006D8C66 /* vec4.c in Sources */,
+				72B132B314D331DB006D8C66 /* Entity.m in Sources */,
+				72B132B614D33455006D8C66 /* Hero.m in Sources */,
+				72B132B914D3359D006D8C66 /* Wizard.m in Sources */,
+				72B132BC14D335F4006D8C66 /* Ranger.m in Sources */,
+				72B132BF14D3368F006D8C66 /* MainGameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1129,7 +1159,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1142,7 +1172,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "libs/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1153,7 +1183,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1164,7 +1194,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "libs/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1175,7 +1205,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1183,6 +1213,7 @@
 				GCC_PREFIX_HEADER = MiniRaiders/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"MiniRaiders/libs/kazmath/include\"";
 				INFOPLIST_FILE = MiniRaiders/Resources/Info.plist;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1193,13 +1224,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MiniRaiders/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"MiniRaiders/libs/kazmath/include\"";
 				INFOPLIST_FILE = MiniRaiders/Resources/Info.plist;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;

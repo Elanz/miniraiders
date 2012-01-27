@@ -10,10 +10,10 @@
 #import <GameKit/GameKit.h>
 #import "cocos2d.h"
 
-@class MainGameController;
+@class BossAttackController;
 
 @interface MainMenuLayer : CCLayer {
-    MainGameController * gameController;
+    BossAttackController * gameController;
 }
 
 +(CCScene *) scene;

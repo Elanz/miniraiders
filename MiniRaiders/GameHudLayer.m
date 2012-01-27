@@ -7,17 +7,17 @@
 //
 
 #import "GameHudLayer.h"
-#import "MainGameController.h"
+#import "BossAttackController.h"
 #import "Boss.h"
 
 @implementation GameHudLayer
 
-@synthesize gameController;
+@synthesize bossAttackController;
 
--(id) initWithGameController:(MainGameController*)controller
+-(id) initWithGameController:(BossAttackController*)controller
 {
 	if( (self=[super init])) {
-        self.gameController = controller;
+        self.bossAttackController = controller;
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         _scorePanel = [CCSprite spriteWithFile:@"top_score_panel.png"];
@@ -56,10 +56,10 @@
 
 - (void) update:(ccTime)dt
 {
-    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self.gameController.gameStartTime];
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self.bossAttackController.gameStartTime];
     [_timeLabel setString:[self stringFromInterval:interval]];
-    [_DPSLabel setString:[NSString stringWithFormat:@"%012d", (int)(self.gameController.theBoss.damageDone/interval)]];
-    _bossHealth.percentage = (self.gameController.theBoss.currentHealth/self.gameController.theBoss.totalHealth)*100;
+    [_DPSLabel setString:[NSString stringWithFormat:@"%012d", (int)(self.bossAttackController.theBoss.damageDone/interval)]];
+    _bossHealth.percentage = (self.bossAttackController.theBoss.currentHealth/self.bossAttackController.theBoss.totalHealth)*100;
 }
 
 @end
