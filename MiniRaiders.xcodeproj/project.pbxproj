@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		725795AD14D5A7230024208F /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725795AC14D5A7230024208F /* MainGameController.m */; };
+		725795B114D5A9350024208F /* atkoff_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 725795AE14D5A9350024208F /* atkoff_btn.png */; };
+		725795B214D5A9350024208F /* atkon_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 725795AF14D5A9350024208F /* atkon_btn.png */; };
+		725795B314D5A9350024208F /* bottom_panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 725795B014D5A9350024208F /* bottom_panel.png */; };
 		7259782E14D4DCD20004FCFC /* fight.png in Resources */ = {isa = PBXBuildFile; fileRef = 7259782B14D4DCD20004FCFC /* fight.png */; };
 		7259782F14D4DCD20004FCFC /* lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 7259782C14D4DCD20004FCFC /* lose.png */; };
 		7259783014D4DCD20004FCFC /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 7259782D14D4DCD20004FCFC /* win.png */; };
@@ -162,10 +166,14 @@
 		72B132B614D33455006D8C66 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B514D33455006D8C66 /* Hero.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72B132B914D3359D006D8C66 /* Wizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B814D3359D006D8C66 /* Wizard.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72B132BC14D335F4006D8C66 /* Ranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BB14D335F4006D8C66 /* Ranger.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		72B132BF14D3368F006D8C66 /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BE14D3368E006D8C66 /* MainGameController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		725795AB14D5A7230024208F /* MainGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameController.h; sourceTree = "<group>"; };
+		725795AC14D5A7230024208F /* MainGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGameController.m; sourceTree = "<group>"; };
+		725795AE14D5A9350024208F /* atkoff_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atkoff_btn.png; path = Resources/gui/atkoff_btn.png; sourceTree = "<group>"; };
+		725795AF14D5A9350024208F /* atkon_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atkon_btn.png; path = Resources/gui/atkon_btn.png; sourceTree = "<group>"; };
+		725795B014D5A9350024208F /* bottom_panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottom_panel.png; path = Resources/gui/bottom_panel.png; sourceTree = "<group>"; };
 		7259782B14D4DCD20004FCFC /* fight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fight.png; path = Resources/gui/fight.png; sourceTree = "<group>"; };
 		7259782C14D4DCD20004FCFC /* lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lose.png; path = Resources/gui/lose.png; sourceTree = "<group>"; };
 		7259782D14D4DCD20004FCFC /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win.png; path = Resources/gui/win.png; sourceTree = "<group>"; };
@@ -447,8 +455,6 @@
 		72B132B814D3359D006D8C66 /* Wizard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wizard.m; sourceTree = "<group>"; };
 		72B132BA14D335F4006D8C66 /* Ranger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranger.h; sourceTree = "<group>"; };
 		72B132BB14D335F4006D8C66 /* Ranger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ranger.m; sourceTree = "<group>"; };
-		72B132BD14D3368E006D8C66 /* MainGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainGameController.h; path = ../MainGameController.h; sourceTree = "<group>"; };
-		72B132BE14D3368E006D8C66 /* MainGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainGameController.m; path = ../MainGameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +480,9 @@
 		725F26B014D1CD73002D92CC /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				725795AE14D5A9350024208F /* atkoff_btn.png */,
+				725795AF14D5A9350024208F /* atkon_btn.png */,
+				725795B014D5A9350024208F /* bottom_panel.png */,
 				7259782B14D4DCD20004FCFC /* fight.png */,
 				7259782C14D4DCD20004FCFC /* lose.png */,
 				7259782D14D4DCD20004FCFC /* win.png */,
@@ -562,10 +571,10 @@
 				72B132B214D331DA006D8C66 /* Entity.m */,
 				72A3D6BD14CF05FC00400D17 /* MiniRaidersDelegate.h */,
 				72A3D6BE14CF05FC00400D17 /* MiniRaidersDelegate.m */,
+				725795AB14D5A7230024208F /* MainGameController.h */,
+				725795AC14D5A7230024208F /* MainGameController.m */,
 				72A3D6C014CF05FC00400D17 /* MainMenuLayer.h */,
 				72A3D6C114CF05FC00400D17 /* MainMenuLayer.m */,
-				72B132BD14D3368E006D8C66 /* MainGameController.h */,
-				72B132BE14D3368E006D8C66 /* MainGameController.m */,
 				72B12A7614D30574006D8C66 /* Guild.h */,
 				72B12A7714D30574006D8C66 /* Guild.m */,
 				72B12A6E14D2EDAF006D8C66 /* Cocos2dUtility.h */,
@@ -1042,6 +1051,9 @@
 				7259782E14D4DCD20004FCFC /* fight.png in Resources */,
 				7259782F14D4DCD20004FCFC /* lose.png in Resources */,
 				7259783014D4DCD20004FCFC /* win.png in Resources */,
+				725795B114D5A9350024208F /* atkoff_btn.png in Resources */,
+				725795B214D5A9350024208F /* atkon_btn.png in Resources */,
+				725795B314D5A9350024208F /* bottom_panel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,8 +1173,8 @@
 				72B132B614D33455006D8C66 /* Hero.m in Sources */,
 				72B132B914D3359D006D8C66 /* Wizard.m in Sources */,
 				72B132BC14D335F4006D8C66 /* Ranger.m in Sources */,
-				72B132BF14D3368F006D8C66 /* MainGameController.m in Sources */,
 				727B9DCF14D3449B0059BC07 /* BossAttackInputController.m in Sources */,
+				725795AD14D5A7230024208F /* MainGameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

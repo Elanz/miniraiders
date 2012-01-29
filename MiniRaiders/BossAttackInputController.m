@@ -8,6 +8,7 @@
 
 #import "BossAttackInputController.h"
 #import "BossAttackController.h"
+#import "GameHudLayer.h"
 #import "Entity.h"
 #import "Hero.h"
 #import "Boss.h"
@@ -42,13 +43,23 @@
     [self rebuildEntityList];
     UITouch * touch = [touches anyObject];
     CGPoint loc = [_bossAttackController convertTouchToNodeSpace:touch];
+    BOOL entitySelected = NO;
     for (Entity * entity in _entityList)
     {
-        if ([entity isKindOfClass:[Hero class]] && CGRectContainsPoint(entity.boundingBox, loc))
+        if (CGRectContainsPoint(entity.boundingBox, loc))
         {
-            _entityBeingTracked = entity;
+            entitySelected = YES;
+            [_bossAttackController.hudLayer showBottomPanelForEntity:entity];
+            if ([entity isKindOfClass:[Hero class]])
+            {
+                _entityBeingTracked = entity;
+            }
             break;
         }
+    }
+    if (!entitySelected)
+    {
+        [_bossAttackController.hudLayer hideBottomPanel];
     }
 }
 

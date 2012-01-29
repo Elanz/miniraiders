@@ -49,7 +49,7 @@
     _bossAttackController = controller;
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    int startY = 40;
+    int startY = 80;
     int startX = 40;
     int howMany = [Heroes count] - 1;
     int width = winSize.width - 80;

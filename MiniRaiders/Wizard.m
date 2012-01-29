@@ -21,7 +21,7 @@
         self.currentHealth = 80;
         self.attackCooldown = 1.5;
         self.xp = 0;
-        self.level = 0;
+        self.level = 1;
         self.meleeRange = 15;
         self.spellRange = 150;
         self.dmgLow = 5;

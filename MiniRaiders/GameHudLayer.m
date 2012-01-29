@@ -14,6 +14,7 @@
 @implementation GameHudLayer
 
 @synthesize bossAttackController = _bossAttackController;
+@synthesize bottomPanelEntity = _bottomPanelEntity;
 
 -(id) initWithGameController:(BossAttackController*)controller
 {
@@ -24,6 +25,10 @@
         _scorePanel = [CCSprite spriteWithFile:@"top_score_panel.png"];
         [_scorePanel setPosition:ccp(winSize.width/2,winSize.height-10)];
         [self addChild:_scorePanel];
+        
+        _bottomPanel = [CCSprite spriteWithFile:@"bottom_panel.png"];
+        [self addChild:_bottomPanel];
+        [_bottomPanel setPosition:ccp(0, 0-_bottomPanel.boundingBox.size.height)];
         
         _timeLabel = [CCLabelTTF labelWithString:@"00:00" fontName:@"Courier New" fontSize:16];
         [_timeLabel setColor:ccBLACK];
@@ -66,6 +71,39 @@
     NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self.bossAttackController.gameStartTime];
     [_timeLabel setString:[self stringFromInterval:interval]];
     [_DPSLabel setString:[NSString stringWithFormat:@"%012d", (int)([[Guild sharedGuild] damageDone]/interval)]];
+}
+
+- (void) showBottomPanelForEntity:(Entity*)entity
+{
+    if (!_bottomPanelEntity)
+    {
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        [_bottomPanel setPosition:ccp(winSize.width/2, 0-(_bottomPanel.boundingBox.size.height/2))];
+        CGPoint destination = ccp(winSize.width/2, (_bottomPanel.boundingBox.size.height/2));
+        [_bottomPanel runAction:[CCMoveTo actionWithDuration:0.3 position:destination]];
+        _bottomPanelEntity = entity;
+    }
+}
+
+- (void) hideBottomPanel
+{
+    if (_bottomPanelEntity)
+    {
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        _bottomPanelEntity = nil;
+        CGPoint destination = ccp(winSize.width/2, 0-(_bottomPanel.boundingBox.size.height/2));
+        [_bottomPanel runAction:[CCMoveTo actionWithDuration:0.3 position:destination]];
+    }
+}
+
+- (void) bottomPanelTouchLeft
+{
+    
+}
+
+- (void) bottomPanelTouchRight
+{
+    
 }
 
 @end
