@@ -7,10 +7,26 @@
 //
 
 #import "Hero.h"
+#import "Boss.h"
+#import "BossAttackController.h"
 
 @implementation Hero
 
 @synthesize XP;
 @synthesize Level;
+
+- (void) chooseTarget
+{
+    self.target = _parentController.theBoss;
+}
+
+- (void) attackTarget
+{
+    [super attackTarget];
+    
+    double damage = self.dmgLow + fmod(arc4random(), self.dmgHigh);
+    [_parentController attackBoss:damage];
+    self.damageDone += damage;
+}
 
 @end

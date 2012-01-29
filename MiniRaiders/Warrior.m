@@ -19,7 +19,12 @@
         self.attackCooldown = 1.0;
         self.XP = 0;
         self.Level = 0;
+        self.meleeRange = 20;
+        self.range = 20;
+        self.dmgLow = 10;
+        self.dmgHigh = 15;
         _timeSinceLastAttack = 0;
+        self.pixelsPerSecond = 20.0;
     }
     return self;
 }

@@ -16,10 +16,15 @@
     {
         self.totalHealth = 80;
         self.currentHealth = 80;
-        self.attackCooldown = 1.2;
+        self.attackCooldown = 1.5;
         self.XP = 0;
         self.Level = 0;
+        self.meleeRange = 15;
+        self.range = 150;
+        self.dmgLow = 15;
+        self.dmgHigh = 20;
         _timeSinceLastAttack = 0;
+        self.pixelsPerSecond = 25.0;
     }
     return self;
 }

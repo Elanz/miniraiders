@@ -9,6 +9,7 @@
 #import "GameHudLayer.h"
 #import "BossAttackController.h"
 #import "Boss.h"
+#import "Guild.h"
 
 @implementation GameHudLayer
 
@@ -34,13 +35,6 @@
         [_DPSLabel setPosition:ccp(120,winSize.height-11)];
         [self addChild:_DPSLabel];
         
-        _bossHealth = [CCProgressTimer progressWithSprite:[CCSprite spriteWithFile:@"bosshealth.png"]];
-        _bossHealth.type = kCCProgressTimerTypeBar;
-        _bossHealth.midpoint = ccp(0,winSize.height-30);
-        _bossHealth.barChangeRate = ccp(1,0);
-        _bossHealth.position = ccp((winSize.width/2),winSize.height-31);
-        [self addChild:_bossHealth];
-        
         [self scheduleUpdate];
 	}
 	return self;
@@ -58,8 +52,7 @@
 {
     NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self.bossAttackController.gameStartTime];
     [_timeLabel setString:[self stringFromInterval:interval]];
-    [_DPSLabel setString:[NSString stringWithFormat:@"%012d", (int)(self.bossAttackController.theBoss.damageDone/interval)]];
-    _bossHealth.percentage = (self.bossAttackController.theBoss.currentHealth/self.bossAttackController.theBoss.totalHealth)*100;
+    [_DPSLabel setString:[NSString stringWithFormat:@"%012d", (int)([[Guild sharedGuild] damageDone]/interval)]];
 }
 
 @end

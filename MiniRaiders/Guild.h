@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 @class BossAttackController;
 
@@ -17,8 +18,11 @@
 @property (nonatomic, retain) NSString * Name;
 @property (nonatomic, retain) NSMutableArray * Heroes;
 @property (nonatomic, readwrite) int Fame;
+@property (nonatomic, readonly) float damageDone;
+
++ (Guild*) sharedGuild;
 
 - (void) prepareForBossAttack:(BossAttackController*)controller;
-+ (Guild*) sharedGuild;
+- (void) AITick:(ccTime)dt;
 
 @end

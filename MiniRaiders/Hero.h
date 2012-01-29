@@ -14,4 +14,6 @@
 @property (nonatomic, readwrite) int XP;
 @property (nonatomic, readwrite) int Level;
 
+- (void) chooseTarget;
+
 @end

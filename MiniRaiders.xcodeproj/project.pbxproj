@@ -17,8 +17,8 @@
 		725F270C14D20033002D92CC /* mainmenu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F270B14D20032002D92CC /* mainmenu_bg.png */; };
 		725F270F14D2070C002D92CC /* proto_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F270E14D2070C002D92CC /* proto_field.png */; };
 		725F271114D214DF002D92CC /* top_score_panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F271014D214DF002D92CC /* top_score_panel.png */; };
-		725F28B614D226AF002D92CC /* bosshealth.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F28B514D226AF002D92CC /* bosshealth.png */; };
 		725F28BE14D23EAA002D92CC /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F28BD14D23EA9002D92CC /* Boss.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		727B9DCF14D3449B0059BC07 /* BossAttackInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727B9DCE14D3449B0059BC07 /* BossAttackInputController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72A3D53B14CF05FA00400D17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53A14CF05FA00400D17 /* QuartzCore.framework */; };
 		72A3D53D14CF05FA00400D17 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53C14CF05FA00400D17 /* OpenGLES.framework */; };
 		72A3D53F14CF05FA00400D17 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53E14CF05FA00400D17 /* OpenAL.framework */; };
@@ -155,11 +155,11 @@
 		72B1328114D3176C006D8C66 /* LICENSE_Kazmath.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72B1321E14D3176C006D8C66 /* LICENSE_Kazmath.txt */; };
 		72B132AF14D32EDF006D8C66 /* sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72B132AD14D32EDF006D8C66 /* sprites.plist */; };
 		72B132B014D32EDF006D8C66 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B132AE14D32EDF006D8C66 /* sprites.png */; };
-		72B132B314D331DB006D8C66 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B214D331DA006D8C66 /* Entity.m */; };
-		72B132B614D33455006D8C66 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B514D33455006D8C66 /* Hero.m */; };
-		72B132B914D3359D006D8C66 /* Wizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B814D3359D006D8C66 /* Wizard.m */; };
-		72B132BC14D335F4006D8C66 /* Ranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BB14D335F4006D8C66 /* Ranger.m */; };
-		72B132BF14D3368F006D8C66 /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BE14D3368E006D8C66 /* MainGameController.m */; };
+		72B132B314D331DB006D8C66 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B214D331DA006D8C66 /* Entity.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72B132B614D33455006D8C66 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B514D33455006D8C66 /* Hero.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72B132B914D3359D006D8C66 /* Wizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B814D3359D006D8C66 /* Wizard.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72B132BC14D335F4006D8C66 /* Ranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BB14D335F4006D8C66 /* Ranger.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72B132BF14D3368F006D8C66 /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BE14D3368E006D8C66 /* MainGameController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,9 +176,10 @@
 		725F270B14D20032002D92CC /* mainmenu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainmenu_bg.png; path = Resources/gui/mainmenu_bg.png; sourceTree = "<group>"; };
 		725F270E14D2070C002D92CC /* proto_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = proto_field.png; path = Resources/fields/proto_field.png; sourceTree = "<group>"; };
 		725F271014D214DF002D92CC /* top_score_panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_score_panel.png; path = Resources/gui/top_score_panel.png; sourceTree = "<group>"; };
-		725F28B514D226AF002D92CC /* bosshealth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bosshealth.png; path = Resources/gui/bosshealth.png; sourceTree = "<group>"; };
 		725F28BC14D23EA9002D92CC /* Boss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boss.h; sourceTree = "<group>"; };
 		725F28BD14D23EA9002D92CC /* Boss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boss.m; sourceTree = "<group>"; };
+		727B9DCD14D3449B0059BC07 /* BossAttackInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossAttackInputController.h; sourceTree = "<group>"; };
+		727B9DCE14D3449B0059BC07 /* BossAttackInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BossAttackInputController.m; sourceTree = "<group>"; };
 		72A3D53614CF05FA00400D17 /* MiniRaiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRaiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A3D53A14CF05FA00400D17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		72A3D53C14CF05FA00400D17 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -467,7 +468,6 @@
 		725F26B014D1CD73002D92CC /* gui */ = {
 			isa = PBXGroup;
 			children = (
-				725F28B514D226AF002D92CC /* bosshealth.png */,
 				725F271014D214DF002D92CC /* top_score_panel.png */,
 				725F270B14D20032002D92CC /* mainmenu_bg.png */,
 				725F26B314D1CECB002D92CC /* start_btn_down.png */,
@@ -498,6 +498,8 @@
 			children = (
 				72B132AC14D31FB1006D8C66 /* BossAttackController.h */,
 				725F26B714D1D363002D92CC /* BossAttackController.m */,
+				727B9DCD14D3449B0059BC07 /* BossAttackInputController.h */,
+				727B9DCE14D3449B0059BC07 /* BossAttackInputController.m */,
 				725F26B914D1D3F2002D92CC /* BackgroundLayer.h */,
 				725F26BA14D1D3F2002D92CC /* BackgroundLayer.m */,
 				725F26BC14D1D413002D92CC /* GameplayLayer.h */,
@@ -1021,7 +1023,6 @@
 				725F270C14D20033002D92CC /* mainmenu_bg.png in Resources */,
 				725F270F14D2070C002D92CC /* proto_field.png in Resources */,
 				725F271114D214DF002D92CC /* top_score_panel.png in Resources */,
-				725F28B614D226AF002D92CC /* bosshealth.png in Resources */,
 				72B1327114D3176C006D8C66 /* ChangeLog in Resources */,
 				72B1327214D3176C006D8C66 /* CMakeLists.txt in Resources */,
 				72B1327F14D3176C006D8C66 /* LICENSE_cocos2d.txt in Resources */,
@@ -1149,6 +1150,7 @@
 				72B132B914D3359D006D8C66 /* Wizard.m in Sources */,
 				72B132BC14D335F4006D8C66 /* Ranger.m in Sources */,
 				72B132BF14D3368F006D8C66 /* MainGameController.m in Sources */,
+				727B9DCF14D3449B0059BC07 /* BossAttackInputController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

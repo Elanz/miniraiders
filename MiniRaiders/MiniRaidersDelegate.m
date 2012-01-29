@@ -49,6 +49,8 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
     
     // game setup
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];
+    
     _gameController = [[MainGameController alloc] init];
     [_gameController loadGame];
     

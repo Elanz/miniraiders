@@ -34,6 +34,16 @@
     return self;
 }
 
+- (float) damageDone
+{
+    float totalDamage = 0;
+    for (Hero * hero in Heroes)
+    {
+        totalDamage += hero.damageDone;
+    }
+    return totalDamage;
+}
+
 - (void) prepareForBossAttack:(BossAttackController *)controller
 {
     _bossAttackController = controller;
@@ -47,9 +57,18 @@
     
     for (Hero * hero in Heroes)
     {
-        [hero setParentBatch:controller.spriteBatch];
-        [hero.entitySprite setPosition:ccp(startX, startY)];
+        hero.damageDone = 0;
+        [hero setParentController:controller];
+        [hero setPosition:ccp(startX, startY)];
         startX += deltaX;
+    }
+}
+
+- (void) AITick:(ccTime)dt
+{
+    for (Hero * hero in Heroes)
+    {
+        [hero AITick:dt];
     }
 }
 

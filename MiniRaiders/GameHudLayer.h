@@ -15,7 +15,6 @@
     CCLabelTTF * _timeLabel;
     CCLabelTTF * _DPSLabel;
     CCSprite * _scorePanel;
-    CCProgressTimer * _bossHealth;
 }
 
 @property (nonatomic, assign) BossAttackController * bossAttackController;

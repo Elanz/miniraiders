@@ -7,6 +7,7 @@
 //
 
 #import "BossAttackController.h"
+#import "BossAttackInputController.h"
 #import "BackgroundLayer.h"
 #import "GameplayLayer.h"
 #import "GameHudLayer.h"
@@ -40,19 +41,19 @@
     [_bossAttackScene addChild:_hudLayer];
     [_bossAttackScene addChild:self];
     
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"sprites.plist"];
     self.spriteBatch = [CCSpriteBatchNode batchNodeWithFile:@"sprites.png"];
     [self.gameplayLayer addChild:self.spriteBatch];
     
     _theBoss = [[Boss alloc] init];
     
-    [self start];
+    _inputController = [[BossAttackInputController alloc] initWithBossAttackController:self];
+    
 	return _bossAttackScene;
 }
 
 - (void) start
 {
-    [_theBoss setParentBatch:self.spriteBatch];
+    [_theBoss setParentController:self];
     [[Guild sharedGuild] prepareForBossAttack:self];
     
     self.gameStartTime = [NSDate date];
@@ -61,12 +62,23 @@
 
 - (void) doWin
 {
+    [self.spriteBatch removeAllChildrenWithCleanup:YES];
+    [self.backgroundLayer removeAllChildrenWithCleanup:YES];
+    [self.hudLayer removeAllChildrenWithCleanup:YES];
+    [self.gameplayLayer removeAllChildrenWithCleanup:YES];
     [[CCDirector sharedDirector] replaceScene: [MainMenuLayer scene]]; 
 }
 
 - (void) AITick:(ccTime)dt
 {
     [_theBoss AITick:dt];
+    [[Guild sharedGuild] AITick:dt];
+}
+
+- (void) attackBoss:(double)dmg
+{
+    [_theBoss takeDamage:dmg];
+    if (_theBoss.currentHealth < 0) [self doWin];
 }
 
 @end

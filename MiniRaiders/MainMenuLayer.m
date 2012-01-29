@@ -40,6 +40,7 @@
 {
     gameController = [[BossAttackController alloc] init];
     [[CCDirector sharedDirector] replaceScene:[gameController scene]];
+    [gameController start];
 }
 
 @end
