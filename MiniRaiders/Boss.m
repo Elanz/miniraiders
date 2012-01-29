@@ -49,8 +49,6 @@
     }
     
     self.target = newTarget;
-
-    NSLog(@" target = %@", self.target.namePrefix);
 }
 
 - (void) takeDamage:(float)dmg from:(Entity *)entity

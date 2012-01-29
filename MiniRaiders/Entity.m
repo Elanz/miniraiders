@@ -17,6 +17,7 @@
 @synthesize totalHealth;
 @synthesize currentHealth;
 @synthesize damageDone;
+@synthesize healingDone;
 @synthesize attackCooldown;
 @synthesize namePrefix;
 @synthesize parentController = _parentController;
@@ -27,6 +28,8 @@
 @synthesize meleeRange;
 @synthesize dmgLow;
 @synthesize dmgHigh;
+@synthesize healLow;
+@synthesize healHigh;
 @synthesize EntityId;
 @synthesize newState = _newState;
 
@@ -178,6 +181,14 @@
 {
     self.currentHealth -= dmg;    
     _entityHealthBar.percentage = (self.currentHealth/self.totalHealth)*100;
+}
+
+- (void) heal:(float)dmg from:(Entity*)entity
+{
+    self.currentHealth += dmg;
+    if (self.currentHealth > self.totalHealth) self.currentHealth = self.totalHealth;
+    
+    _entityHealthBar.percentage = (self.currentHealth/self.totalHealth)*100;    
 }
 
 - (void) attackTarget

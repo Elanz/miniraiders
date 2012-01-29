@@ -63,7 +63,7 @@
     [[Guild sharedGuild] prepareForBossAttack:self];
     
     self.gameStartTime = [NSDate date];
-    [self schedule:@selector(AITick:) interval:0.5f];
+    [self schedule:@selector(AITick:) interval:0.1f];
     [_hudLayer showOverlay:@"fight.png"];
     [self scheduleOnce:@selector(hideOverlay) delay:1.5];
 }

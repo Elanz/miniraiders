@@ -46,12 +46,15 @@
 @property (nonatomic, readwrite) float totalHealth;
 @property (nonatomic, readwrite) float currentHealth;
 @property (nonatomic, readwrite) float damageDone;
+@property (nonatomic, readwrite) float healingDone;
 @property (nonatomic, readwrite) float attackCooldown;
 @property (nonatomic, readwrite) float pixelsPerSecond;
 @property (nonatomic, readwrite) float meleeRange;
 @property (nonatomic, readwrite) float range;
 @property (nonatomic, readwrite) float dmgLow;
 @property (nonatomic, readwrite) float dmgHigh;
+@property (nonatomic, readwrite) float healLow;
+@property (nonatomic, readwrite) float healHigh;
 @property (nonatomic, retain) NSString * namePrefix;
 @property (nonatomic, retain) BossAttackController * parentController;
 @property (nonatomic, readwrite) CGPoint goal;
@@ -66,6 +69,7 @@
 - (void) chooseTarget;
 - (void) attackTarget;
 - (void) takeDamage:(float)dmg from:(Entity*)entity;
+- (void) heal:(float)dmg from:(Entity*)entity;
 - (float) rangeToTarget:(Entity*)entity;
 
 @end

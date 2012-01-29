@@ -93,11 +93,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495310.178139"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
          landmarkName = "-setGoal:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -121,11 +121,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495310.178139"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
          landmarkName = "-setGoal:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -135,11 +135,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495310.178139"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-setGoal:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -163,11 +163,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495310.178139"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "-movementComplete"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495310.178139"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "203"
-         endingLineNumber = "203"
+         startingLineNumber = "212"
+         endingLineNumber = "212"
          landmarkName = "-AITick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -191,11 +191,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495310.178139"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "107"
-         endingLineNumber = "107"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-cancelMovement"
          landmarkType = "5">
       </FileBreakpoint>
@@ -231,11 +231,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495310.178139"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "185"
-         endingLineNumber = "185"
+         startingLineNumber = "194"
+         endingLineNumber = "194"
          landmarkName = "-attackTarget"
          landmarkType = "5">
       </FileBreakpoint>
@@ -283,12 +283,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349495908.272861"
+         timestampString = "349496959.589334"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "172"
-         endingLineNumber = "172"
+         startingLineNumber = "173"
+         endingLineNumber = "173"
          landmarkName = "-rangeToTarget:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MiniRaiders/Wizard.m"
+         timestampString = "349497141.475532"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
+         landmarkName = "-attackTarget"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
