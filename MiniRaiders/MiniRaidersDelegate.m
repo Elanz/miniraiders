@@ -12,7 +12,10 @@
 
 @implementation MiniRaidersDelegate
 
-@synthesize window=window_, navController=navController_, director=director_, gameController=_gameController;
+@synthesize window = _window;
+@synthesize navController = _navController;
+@synthesize director = _director;
+@synthesize gameController = _gameController;
 
 + (MiniRaidersDelegate *) sharedAppDelegate
 {
@@ -21,8 +24,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	CCGLView *glView = [CCGLView viewWithFrame:[window_ bounds]
+	_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	CCGLView *glView = [CCGLView viewWithFrame:[_window bounds]
 								   pixelFormat:kEAGLColorFormatRGB565	//kEAGLColorFormatRGBA8
 								   depthFormat:0	//GL_DEPTH_COMPONENT24_OES
 							preserveBackbuffer:NO
@@ -30,19 +33,19 @@
 								 multiSampling:NO
 							   numberOfSamples:0];
 
-	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
-	director_.wantsFullScreenLayout = YES;
-	[director_ setDisplayStats:YES];
-	[director_ setAnimationInterval:1.0/60];
-	[director_ setView:glView];
-	[director_ setDelegate:self];
-	[director_ setProjection:kCCDirectorProjection2D];
+	_director = (CCDirectorIOS*) [CCDirector sharedDirector];
+	_director.wantsFullScreenLayout = YES;
+	[_director setDisplayStats:YES];
+	[_director setAnimationInterval:1.0/60];
+	[_director setView:glView];
+	[_director setDelegate:self];
+	[_director setProjection:kCCDirectorProjection2D];
 //    if( ! [director_ enableRetinaDisplay:YES] )
 //		CCLOG(@"Retina Display Not supported");
-	navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
-	navController_.navigationBarHidden = YES;
-	[window_ addSubview:navController_.view];
-	[window_ makeKeyAndVisible];
+	_navController = [[UINavigationController alloc] initWithRootViewController:_director];
+	_navController.navigationBarHidden = YES;
+	[_window addSubview:_navController.view];
+	[_window makeKeyAndVisible];
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
 	[CCFileUtils setiPadSuffix:@"-ipad"];			// Default on iPad is "" (empty string)
 	[CCFileUtils setRetinaDisplaySuffix:@"-hd"];	// Default on RetinaDisplay is "-hd"
@@ -54,7 +57,7 @@
     _gameController = [[MainGameController alloc] init];
     [_gameController loadGame];
     
-	[director_ pushScene: [MainMenuLayer scene]]; 
+	[_director pushScene: [MainMenuLayer scene]]; 
 
 	return YES;
 }
@@ -69,27 +72,27 @@
 // getting a call, pause the game
 -(void) applicationWillResignActive:(UIApplication *)application
 {
-	if( [navController_ visibleViewController] == director_ )
-		[director_ pause];
+	if( [_navController visibleViewController] == _director )
+		[_director pause];
 }
 
 // call got rejected
 -(void) applicationDidBecomeActive:(UIApplication *)application
 {
-	if( [navController_ visibleViewController] == director_ )
-		[director_ resume];
+	if( [_navController visibleViewController] == _director )
+		[_director resume];
 }
 
 -(void) applicationDidEnterBackground:(UIApplication*)application
 {
-	if( [navController_ visibleViewController] == director_ )
-		[director_ stopAnimation];
+	if( [_navController visibleViewController] == _director )
+		[_director stopAnimation];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application
 {
-	if( [navController_ visibleViewController] == director_ )
-		[director_ startAnimation];
+	if( [_navController visibleViewController] == _director )
+		[_director startAnimation];
 }
 
 // application will be killed

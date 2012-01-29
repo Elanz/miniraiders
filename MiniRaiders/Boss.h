@@ -11,6 +11,10 @@
 
 @interface Boss : Entity{
     NSMutableDictionary * _threatTable;
+    NSMutableArray * _patrolPoints;
+    int _currentPatrolPoint;
 }
+
+- (void) observeHealing:(double)healing fromWho:(Entity*)entity;
 
 @end

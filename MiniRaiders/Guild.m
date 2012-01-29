@@ -34,9 +34,9 @@
     return self;
 }
 
-- (float) damageDone
+- (double) damageDone
 {
-    float totalDamage = 0;
+    double totalDamage = 0;
     for (Hero * hero in Heroes)
     {
         totalDamage += hero.damageDone;
@@ -53,7 +53,7 @@
     int startX = 40;
     int howMany = [Heroes count] - 1;
     int width = winSize.width - 80;
-    float deltaX = (float)width / (float)howMany;
+    double deltaX = (double)width / (double)howMany;
     
     for (Hero * hero in Heroes)
     {
@@ -62,6 +62,7 @@
         hero.newState = entity_idle;
         [hero setParentController:controller];
         [hero setPosition:ccp(startX, startY)];
+        [hero setGoal:ccp(startX, startY)];
         startX += deltaX;
     }
 }
@@ -70,7 +71,7 @@
 {
     for (Hero * entity in self.Heroes)
     {
-        if ([entity.EntityId compare:Id] == NSOrderedSame)
+        if ([entity.entityId compare:Id] == NSOrderedSame)
         {
             return entity;
         }

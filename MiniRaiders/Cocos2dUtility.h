@@ -13,6 +13,6 @@
 
 + (CCAnimation*) createAnimationWithName:(NSString*)name andFrameCount:(int)frameCount;
 + (CCAction*) callBackActionWithAction:(CCFiniteTimeAction*)action target:(id)target sel:(SEL)sel;
-+ (float) distanceBetweenPointsA:(CGPoint)a B:(CGPoint)b;
++ (double) distanceBetweenPointsA:(CGPoint)a B:(CGPoint)b;
 
 @end

@@ -27,7 +27,7 @@
     return [CCSequence actions:action, [CCCallFunc actionWithTarget:target selector:sel], nil];
 }
 
-+ (float) distanceBetweenPointsA:(CGPoint)a B:(CGPoint)b
++ (double) distanceBetweenPointsA:(CGPoint)a B:(CGPoint)b
 {
     double firstDifference = (a.x - b.x);
     double secondDifference = (a.y - b.y);

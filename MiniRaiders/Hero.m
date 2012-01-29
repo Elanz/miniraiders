@@ -12,8 +12,9 @@
 
 @implementation Hero
 
-@synthesize XP;
-@synthesize Level;
+@synthesize xp = _xp;
+@synthesize level = _Level;
+@synthesize threatFactor = _threatFactor;
 
 - (void) chooseTarget
 {
@@ -29,10 +30,10 @@
     self.damageDone += damage;
 }
 
-- (void) takeDamage:(float)dmg from:(Entity *)entity
+- (void) takeDamage:(double)dmg from:(Entity *)entity
 {
     [super takeDamage:dmg from:entity];
-    if (self.currentHealth < 0)
+    if (self.currentHealth <= 0)
     {
         _newState = entity_death;
         [_parentController heroDied:self];

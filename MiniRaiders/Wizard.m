@@ -20,14 +20,15 @@
         self.totalHealth = 80;
         self.currentHealth = 80;
         self.attackCooldown = 1.5;
-        self.XP = 0;
-        self.Level = 0;
+        self.xp = 0;
+        self.level = 0;
         self.meleeRange = 15;
-        self.range = 150;
+        self.spellRange = 150;
         self.dmgLow = 5;
         self.dmgHigh = 10;
         self.healLow = 15;
         self.healHigh = 20;
+        self.threatFactor = 0.9;
         _timeSinceLastAttack = 0;
         self.pixelsPerSecond = 25.0;
     }
@@ -39,7 +40,7 @@
     Entity * newTarget;
     for (Entity * hero in [Guild sharedGuild].Heroes)
     {
-        if (hero.currentHealth > 0 && hero.currentHealth < hero.totalHealth && [self rangeToTarget:hero] < self.range)
+        if (hero.currentHealth > 0 && hero.currentHealth < hero.totalHealth && [self rangeToTarget:hero] < self.spellRange)
         {
             newTarget = hero;
             break;
@@ -63,8 +64,8 @@
     {
         double healing = self.healLow + fmod(arc4random(), self.healHigh);
         [self.target heal:healing from:self];
+        [_parentController observeHealing:healing from:self];
         self.healingDone += healing;
-        NSLog(@"healing %@ for %lf", self.target.namePrefix, healing);
     }
 }
 

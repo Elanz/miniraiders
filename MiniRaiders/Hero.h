@@ -11,8 +11,9 @@
 
 @interface Hero : Entity
 
-@property (nonatomic, readwrite) int XP;
-@property (nonatomic, readwrite) int Level;
+@property (nonatomic, readwrite) int xp;
+@property (nonatomic, readwrite) int level;
+@property (nonatomic, readwrite) double threatFactor;
 
 - (void) chooseTarget;
 

@@ -18,13 +18,13 @@
 
 @implementation BossAttackController
 
-@synthesize gameController;
+@synthesize gameController = _gameController;
 @synthesize backgroundLayer = _backgroundLayer;
 @synthesize gameplayLayer = _gameplayLayer;
 @synthesize hudLayer = _hudLayer;
 @synthesize theBoss = _theBoss;
-@synthesize gameStartTime;
-@synthesize spriteBatch;
+@synthesize gameStartTime = _gameStartTime;
+@synthesize spriteBatch = _spriteBatch;
 
 -(CCScene *) scene
 {
@@ -110,7 +110,24 @@
 - (void) attackBoss:(double)dmg from:(Entity*)entity
 {
     [_theBoss takeDamage:dmg from:entity];
-    if (_theBoss.currentHealth < 0) [self doWin];
+    if (_theBoss.currentHealth <= 0) [self doWin];
+}
+
+- (void) observeHealing:(double)healing from:(Entity*)entity
+{
+    [_theBoss observeHealing:healing fromWho:entity];
+}
+
+- (void) draw
+{
+    ccDrawColor4f(1.0, 0.0, 0.0, 1.0);  
+    if (!CGPointEqualToPoint(_theBoss.position, _theBoss.goal))
+        ccDrawLine(_theBoss.position, _theBoss.goal);
+    for (Entity * hero in [Guild sharedGuild].Heroes)
+    {
+        if (!CGPointEqualToPoint(hero.position, hero.goal))
+            ccDrawLine(hero.position, hero.goal);
+    }
 }
 
 @end

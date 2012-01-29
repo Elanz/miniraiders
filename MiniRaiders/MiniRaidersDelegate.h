@@ -13,10 +13,10 @@
 
 @interface MiniRaidersDelegate : NSObject <UIApplicationDelegate, CCDirectorDelegate>
 {
-	UIWindow *window_;
-	UINavigationController *navController_;
+	UIWindow * _window;
+	UINavigationController * _navController;
 
-	CCDirectorIOS	*director_;							// weak ref
+	CCDirectorIOS * _director;							// weak ref
     
     MainGameController * _gameController;
 }

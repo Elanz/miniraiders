@@ -14,23 +14,23 @@
 
 @implementation Entity
 
-@synthesize totalHealth;
-@synthesize currentHealth;
-@synthesize damageDone;
-@synthesize healingDone;
-@synthesize attackCooldown;
-@synthesize namePrefix;
+@synthesize totalHealth = _totalHealth;
+@synthesize currentHealth = _currentHealth;
+@synthesize damageDone = _damageDone;
+@synthesize healingDone = _healingDone;
+@synthesize attackCooldown = _attackCooldown;
+@synthesize namePrefix = _namePrefix;
 @synthesize parentController = _parentController;
 @synthesize goal = _goal;
-@synthesize pixelsPerSecond;
-@synthesize target;
-@synthesize range;
-@synthesize meleeRange;
-@synthesize dmgLow;
-@synthesize dmgHigh;
-@synthesize healLow;
-@synthesize healHigh;
-@synthesize EntityId;
+@synthesize pixelsPerSecond = _pixelsPerSecond;
+@synthesize target = _target;
+@synthesize spellRange = _spellRange;
+@synthesize meleeRange = _meleeRange;
+@synthesize dmgLow = _dmgLow;
+@synthesize dmgHigh = _dmgHigh;
+@synthesize healLow = _healLow;
+@synthesize healHigh = _healHigh;
+@synthesize entityId = _entityId;
 @synthesize newState = _newState;
 
 - (NSString*) appendNamePrefix:(NSString*)source
@@ -88,15 +88,15 @@
 
 - (void) setGoal:(CGPoint)newGoal
 {
-    if (self.currentHealth < 0)
+    if (self.currentHealth <= 0)
         return;
     
     if (!CGPointEqualToPoint(_goal, newGoal))
     {
         _goal = newGoal;
         _newState = entity_walk;
-        float distance = [Cocos2dUtility distanceBetweenPointsA:self.position B:_goal];
-        float duration = distance / self.pixelsPerSecond;
+        double distance = [Cocos2dUtility distanceBetweenPointsA:self.position B:_goal];
+        double duration = distance / self.pixelsPerSecond;
         if (_currentMoveAction) [self stopAction:_currentMoveAction];
         [_entityHealthBar stopAllActions];
         _currentMoveAction = [Cocos2dUtility callBackActionWithAction:[CCMoveTo actionWithDuration:duration position:_goal] target:self sel:@selector(movementComplete)];
@@ -170,20 +170,20 @@
         [self runAction:_currentAnimation];
 }
 
-- (float) rangeToTarget:(Entity*)entity
+- (double) rangeToTarget:(Entity*)entity
 {
-    float distanceToBoss = [Cocos2dUtility distanceBetweenPointsA:self.position B:entity.position];
-    float bossRadius = (entity.boundingBox.size.width + entity.boundingBox.size.height)/2;
+    double distanceToBoss = [Cocos2dUtility distanceBetweenPointsA:self.position B:entity.position];
+    double bossRadius = (entity.boundingBox.size.width + entity.boundingBox.size.height)/2;
     return distanceToBoss - bossRadius;
 }
 
-- (void) takeDamage:(float)dmg from:(Entity*)entity
+- (void) takeDamage:(double)dmg from:(Entity*)entity
 {
     self.currentHealth -= dmg;    
     _entityHealthBar.percentage = (self.currentHealth/self.totalHealth)*100;
 }
 
-- (void) heal:(float)dmg from:(Entity*)entity
+- (void) heal:(double)dmg from:(Entity*)entity
 {
     self.currentHealth += dmg;
     if (self.currentHealth > self.totalHealth) self.currentHealth = self.totalHealth;
@@ -207,7 +207,7 @@
 
 - (void) AITick:(ccTime)dt
 {
-    if (self.currentHealth < 0)
+    if (self.currentHealth <= 0)
         return;
     
     _timeSinceLastAttack += dt;
@@ -215,7 +215,7 @@
     {
         [self chooseTarget];
         
-        if (self.target && [self rangeToTarget:self.target] < self.range)
+        if (self.target && [self rangeToTarget:self.target] < self.spellRange)
             [self attackTarget];
             
         _timeSinceLastAttack = 0;

@@ -40,5 +40,6 @@
 - (void) start;
 - (void) AITick:(ccTime)dt;
 - (void) attackBoss:(double)dmg from:(Entity*)entity;
+- (void) observeHealing:(double)healing from:(Entity*)entity;
 
 @end

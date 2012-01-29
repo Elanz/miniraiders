@@ -13,7 +13,7 @@
 
 @implementation GameHudLayer
 
-@synthesize bossAttackController;
+@synthesize bossAttackController = _bossAttackController;
 
 -(id) initWithGameController:(BossAttackController*)controller
 {

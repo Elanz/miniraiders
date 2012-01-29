@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * Name;
 @property (nonatomic, retain) NSMutableArray * Heroes;
 @property (nonatomic, readwrite) int Fame;
-@property (nonatomic, readonly) float damageDone;
+@property (nonatomic, readonly) double damageDone;
 
 + (Guild*) sharedGuild;
 

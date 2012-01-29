@@ -17,12 +17,13 @@
         self.totalHealth = 100;
         self.currentHealth = 100;
         self.attackCooldown = 1.5;
-        self.XP = 0;
-        self.Level = 0;
+        self.xp = 0;
+        self.level = 0;
         self.meleeRange = 15;
-        self.range = 150;
+        self.spellRange = 150;
         self.dmgLow = 15;
         self.dmgHigh = 20;
+        self.threatFactor = 1.1;
         _timeSinceLastAttack = 0;
         self.pixelsPerSecond = 30.0;
     }
