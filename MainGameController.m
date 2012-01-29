@@ -9,6 +9,7 @@
 #import "MainGameController.h"
 #import "Guild.h"
 
+#import "Entity.h"
 #import "Warrior.h"
 #import "Ranger.h"
 #import "Wizard.h"
@@ -20,9 +21,15 @@
 - (void) loadGame
 {
     _theGuild = [[Guild alloc] init];
-    [_theGuild.Heroes addObject:[[Warrior alloc] init]];
-    [_theGuild.Heroes addObject:[[Ranger alloc] init]];
-    [_theGuild.Heroes addObject:[[Wizard alloc] init]];
+    Entity * hero1 = [[Warrior alloc] init];
+    Entity * hero2 = [[Ranger alloc] init];
+    Entity * hero3 = [[Wizard alloc] init];
+    hero1.EntityId = [NSNumber numberWithInt:1];
+    hero2.EntityId = [NSNumber numberWithInt:2];
+    hero3.EntityId = [NSNumber numberWithInt:3];
+    [_theGuild.Heroes addObject:hero1];
+    [_theGuild.Heroes addObject:hero2];
+    [_theGuild.Heroes addObject:hero3];
 }
 
 - (void) saveGame

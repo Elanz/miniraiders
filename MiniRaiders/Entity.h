@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+#define entity_idle 0
+#define entity_melee 1
+#define entity_walk 2
+#define entity_range 3
+#define entity_hurt 4
+#define entity_death 5
+#define entity_dead 6
+
 @class BossAttackController;
 
 @interface Entity : CCSprite {
@@ -19,6 +27,7 @@
     CCAnimate * _melee;
     CCAnimate * _range;
     CCAnimate * _hurt;
+    CCAnimate * _death;
     
     CCAction * _currentMoveAction;
     CCAction * _currentAnimation;
@@ -47,6 +56,7 @@
 @property (nonatomic, retain) BossAttackController * parentController;
 @property (nonatomic, readwrite) CGPoint goal;
 @property (nonatomic, retain) Entity * target;
+@property (nonatomic, retain) NSNumber * EntityId;
 
 - (id) initWithNamePrefix:(NSString*)prefix;
 - (void) AITick:(ccTime)dt;
@@ -54,6 +64,7 @@
 - (void) cancelMovement;
 - (void) chooseTarget;
 - (void) attackTarget;
-- (void) takeDamage:(float)dmg;
+- (void) takeDamage:(float)dmg from:(Entity*)entity;
+- (float) rangeToTarget;
 
 @end

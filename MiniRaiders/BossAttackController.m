@@ -14,6 +14,7 @@
 #import "MainMenuLayer.h"
 #import "Boss.h"
 #import "Guild.h"
+#import "Entity.h"
 
 @implementation BossAttackController
 
@@ -60,7 +61,7 @@
     [self schedule:@selector(AITick:) interval:0.5f];
 }
 
-- (void) doWin
+- (void) returnToMainMenu
 {
     [self.spriteBatch removeAllChildrenWithCleanup:YES];
     [self.backgroundLayer removeAllChildrenWithCleanup:YES];
@@ -69,15 +70,36 @@
     [[CCDirector sharedDirector] replaceScene: [MainMenuLayer scene]]; 
 }
 
+- (void) doWin
+{
+    [self returnToMainMenu];
+}
+
+- (void) doLose
+{
+    [self returnToMainMenu];
+}
+
+- (void) heroDied:(Entity*)hero
+{
+    for (Entity * heroToTest in [Guild sharedGuild].Heroes)
+    {
+        if (heroToTest.currentHealth > 0)
+            return;
+    }
+    
+    [self doLose];
+}
+
 - (void) AITick:(ccTime)dt
 {
     [_theBoss AITick:dt];
     [[Guild sharedGuild] AITick:dt];
 }
 
-- (void) attackBoss:(double)dmg
+- (void) attackBoss:(double)dmg from:(Entity*)entity
 {
-    [_theBoss takeDamage:dmg];
+    [_theBoss takeDamage:dmg from:entity];
     if (_theBoss.currentHealth < 0) [self doWin];
 }
 

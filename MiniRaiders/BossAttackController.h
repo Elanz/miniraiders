@@ -15,6 +15,7 @@
 @class GameHudLayer;
 @class Boss;
 @class BossAttackInputController;
+@class Entity;
 
 @interface BossAttackController : CCNode {
     BackgroundLayer * _backgroundLayer;
@@ -35,8 +36,9 @@
 
 - (CCScene *) scene;
 - (void) doWin;
+- (void) heroDied:(Entity*)hero;
 - (void) start;
 - (void) AITick:(ccTime)dt;
-- (void) attackBoss:(double)dmg;
+- (void) attackBoss:(double)dmg from:(Entity*)entity;
 
 @end

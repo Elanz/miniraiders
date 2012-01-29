@@ -12,12 +12,6 @@
 #import "GameplayLayer.h"
 #import "Boss.h"
 
-#define entity_idle 0
-#define entity_melee 1
-#define entity_walk 2
-#define entity_range 3
-#define entity_hurt 4
-
 @implementation Entity
 
 @synthesize totalHealth;
@@ -33,6 +27,7 @@
 @synthesize meleeRange;
 @synthesize dmgLow;
 @synthesize dmgHigh;
+@synthesize EntityId;
 
 - (NSString*) appendNamePrefix:(NSString*)source
 {
@@ -62,6 +57,7 @@
     _melee = [CCAnimate actionWithAnimation:[Cocos2dUtility createAnimationWithName:[self appendNamePrefix:@"%@_melee"] andFrameCount:2]];
     _range = [CCAnimate actionWithAnimation:[Cocos2dUtility createAnimationWithName:[self appendNamePrefix:@"%@_range"] andFrameCount:2]];
     _hurt = [CCAnimate actionWithAnimation:[Cocos2dUtility createAnimationWithName:[self appendNamePrefix:@"%@_hurt"] andFrameCount:2]];
+    _death = [CCAnimate actionWithAnimation:[Cocos2dUtility createAnimationWithName:[self appendNamePrefix:@"%@_dead"] andFrameCount:2]];
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     [_parentController.spriteBatch addChild:self];
@@ -88,6 +84,9 @@
 
 - (void) setGoal:(CGPoint)newGoal
 {
+    if (self.currentHealth < 0)
+        return;
+    
     if (!CGPointEqualToPoint(_goal, newGoal))
     {
         _goal = newGoal;
@@ -116,7 +115,7 @@
 
 - (id) initWithNamePrefix:(NSString*)prefix
 {
-    if( (self=[super initWithSpriteFrameName:[NSString stringWithFormat:@"%@_idle1.png", prefix]])) {
+    if( (self=[super initWithSpriteFrameName:[NSString stringWithFormat:@"%@_dead2.png", prefix]])) {
         self.namePrefix = prefix;
         _goal = CGPointZero;
     }
@@ -147,6 +146,15 @@
             _newState = oldState;
             _currentAnimation = [self callBackAction:_hurt];
             break;
+        case entity_death:
+            _state = entity_death;
+            _newState = entity_dead;
+            _currentAnimation = [self callBackAction:_death];
+            break;
+        case entity_dead:
+            _state = entity_dead;
+            _currentAnimation = nil;
+            break;
         case entity_idle:
         default:
             _state = entity_idle;
@@ -154,7 +162,8 @@
             break;
     }
     
-    [self runAction:_currentAnimation];
+    if (_currentAnimation)
+        [self runAction:_currentAnimation];
 }
 
 - (float) rangeToTarget
@@ -164,13 +173,9 @@
     return distanceToBoss - bossRadius;
 }
 
-- (void) takeDamage:(float)dmg
+- (void) takeDamage:(float)dmg from:(Entity*)entity
 {
-    self.currentHealth -= dmg;
-    _newState = entity_hurt;
-    [self stopAction:_currentAnimation];
-    [self AnimationComplete];
-    
+    self.currentHealth -= dmg;    
     _entityHealthBar.percentage = (self.currentHealth/self.totalHealth)*100;
 }
 
@@ -190,11 +195,13 @@
 
 - (void) AITick:(ccTime)dt
 {
+    if (self.currentHealth < 0)
+        return;
+    
     _timeSinceLastAttack += dt;
     if (_timeSinceLastAttack > self.attackCooldown)
     {
-        if (!self.target)
-            [self chooseTarget];
+        [self chooseTarget];
         
         if (self.target && [self rangeToTarget] < self.range)
             [self attackTarget];

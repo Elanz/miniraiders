@@ -22,7 +22,7 @@
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         _scorePanel = [CCSprite spriteWithFile:@"top_score_panel.png"];
-        [_scorePanel setPosition:ccp(winSize.width/2,winSize.height-20)];
+        [_scorePanel setPosition:ccp(winSize.width/2,winSize.height-10)];
         [self addChild:_scorePanel];
         
         _timeLabel = [CCLabelTTF labelWithString:@"00:00" fontName:@"Courier New" fontSize:16];

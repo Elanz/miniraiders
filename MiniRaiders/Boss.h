@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Entity.h"
 
-@interface Boss : Entity
+@interface Boss : Entity{
+    NSMutableDictionary * _threatTable;
+}
 
 @end

@@ -25,8 +25,18 @@
     [super attackTarget];
     
     double damage = self.dmgLow + fmod(arc4random(), self.dmgHigh);
-    [_parentController attackBoss:damage];
+    [_parentController attackBoss:damage from:self];
     self.damageDone += damage;
+}
+
+- (void) takeDamage:(float)dmg from:(Entity *)entity
+{
+    [super takeDamage:dmg from:entity];
+    if (self.currentHealth < 0)
+    {
+        _newState = entity_death;
+        [_parentController heroDied:self];
+    }
 }
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7259782E14D4DCD20004FCFC /* fight.png in Resources */ = {isa = PBXBuildFile; fileRef = 7259782B14D4DCD20004FCFC /* fight.png */; };
+		7259782F14D4DCD20004FCFC /* lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 7259782C14D4DCD20004FCFC /* lose.png */; };
+		7259783014D4DCD20004FCFC /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 7259782D14D4DCD20004FCFC /* win.png */; };
 		725F26B214D1CD8E002D92CC /* start_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F26B114D1CD8E002D92CC /* start_btn_up.png */; };
 		725F26B414D1CECB002D92CC /* start_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F26B314D1CECB002D92CC /* start_btn_down.png */; };
 		725F26B814D1D363002D92CC /* BossAttackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F26B714D1D363002D92CC /* BossAttackController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -163,6 +166,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7259782B14D4DCD20004FCFC /* fight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fight.png; path = Resources/gui/fight.png; sourceTree = "<group>"; };
+		7259782C14D4DCD20004FCFC /* lose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lose.png; path = Resources/gui/lose.png; sourceTree = "<group>"; };
+		7259782D14D4DCD20004FCFC /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = win.png; path = Resources/gui/win.png; sourceTree = "<group>"; };
 		725F26B114D1CD8E002D92CC /* start_btn_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_btn_up.png; path = Resources/gui/start_btn_up.png; sourceTree = "<group>"; };
 		725F26B314D1CECB002D92CC /* start_btn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_btn_down.png; path = Resources/gui/start_btn_down.png; sourceTree = "<group>"; };
 		725F26B714D1D363002D92CC /* BossAttackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BossAttackController.m; sourceTree = "<group>"; };
@@ -468,6 +474,9 @@
 		725F26B014D1CD73002D92CC /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				7259782B14D4DCD20004FCFC /* fight.png */,
+				7259782C14D4DCD20004FCFC /* lose.png */,
+				7259782D14D4DCD20004FCFC /* win.png */,
 				725F271014D214DF002D92CC /* top_score_panel.png */,
 				725F270B14D20032002D92CC /* mainmenu_bg.png */,
 				725F26B314D1CECB002D92CC /* start_btn_down.png */,
@@ -972,7 +981,7 @@
 		72A3D52D14CF05FA00400D17 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = 200Monkeys;
 			};
 			buildConfigurationList = 72A3D53014CF05FA00400D17 /* Build configuration list for PBXProject "MiniRaiders" */;
@@ -1030,6 +1039,9 @@
 				72B1328114D3176C006D8C66 /* LICENSE_Kazmath.txt in Resources */,
 				72B132AF14D32EDF006D8C66 /* sprites.plist in Resources */,
 				72B132B014D32EDF006D8C66 /* sprites.png in Resources */,
+				7259782E14D4DCD20004FCFC /* fight.png in Resources */,
+				7259782F14D4DCD20004FCFC /* lose.png in Resources */,
+				7259783014D4DCD20004FCFC /* win.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1170,6 +1182,7 @@
 					"COCOS2D_DEBUG=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1192,6 +1205,7 @@
 					NDEBUG,
 					"NS_BLOCK_ASSERTIONS=1",
 				);
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1213,6 +1227,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MiniRaiders/Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "\"MiniRaiders/libs/kazmath/include\"";
 				INFOPLIST_FILE = MiniRaiders/Resources/Info.plist;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1231,6 +1246,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MiniRaiders/Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "\"MiniRaiders/libs/kazmath/include\"";
 				INFOPLIST_FILE = MiniRaiders/Resources/Info.plist;
 				ONLY_ACTIVE_ARCH = YES;

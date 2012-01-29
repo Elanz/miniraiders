@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 
 @class BossAttackController;
+@class Hero;
 
 @interface Guild : NSObject{
     BossAttackController * _bossAttackController;
@@ -24,5 +25,6 @@
 
 - (void) prepareForBossAttack:(BossAttackController*)controller;
 - (void) AITick:(ccTime)dt;
+- (Hero*) getHeroById:(NSNumber*)Id;
 
 @end

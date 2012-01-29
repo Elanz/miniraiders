@@ -64,6 +64,19 @@
     }
 }
 
+- (Hero*) getHeroById:(NSNumber *)Id
+{
+    for (Hero * entity in self.Heroes)
+    {
+        if ([entity.EntityId compare:Id] == NSOrderedSame)
+        {
+            return entity;
+        }
+    }
+    
+    return nil;
+}
+
 - (void) AITick:(ccTime)dt
 {
     for (Hero * hero in Heroes)

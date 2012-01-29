@@ -37,8 +37,8 @@
 	[director_ setView:glView];
 	[director_ setDelegate:self];
 	[director_ setProjection:kCCDirectorProjection2D];
-    if( ! [director_ enableRetinaDisplay:YES] )
-		CCLOG(@"Retina Display Not supported");
+//    if( ! [director_ enableRetinaDisplay:YES] )
+//		CCLOG(@"Retina Display Not supported");
 	navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
 	[window_ addSubview:navController_.view];
