@@ -15,10 +15,13 @@
     CCLabelTTF * _timeLabel;
     CCLabelTTF * _DPSLabel;
     CCSprite * _scorePanel;
+    CCSprite * _overlay;
 }
 
 @property (nonatomic, assign) BossAttackController * bossAttackController;
 
 - (id) initWithGameController:(BossAttackController*)controller;
+- (void) showOverlay:(NSString*)filename;
+- (void) hideOverlay;
 
 @end

@@ -58,6 +58,8 @@
     for (Hero * hero in Heroes)
     {
         hero.damageDone = 0;
+        hero.currentHealth = hero.totalHealth;
+        hero.newState = entity_idle;
         [hero setParentController:controller];
         [hero setPosition:ccp(startX, startY)];
         startX += deltaX;

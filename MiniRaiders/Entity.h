@@ -57,6 +57,7 @@
 @property (nonatomic, readwrite) CGPoint goal;
 @property (nonatomic, retain) Entity * target;
 @property (nonatomic, retain) NSNumber * EntityId;
+@property (nonatomic, readwrite) int newState;
 
 - (id) initWithNamePrefix:(NSString*)prefix;
 - (void) AITick:(ccTime)dt;
@@ -65,6 +66,6 @@
 - (void) chooseTarget;
 - (void) attackTarget;
 - (void) takeDamage:(float)dmg from:(Entity*)entity;
-- (float) rangeToTarget;
+- (float) rangeToTarget:(Entity*)entity;
 
 @end

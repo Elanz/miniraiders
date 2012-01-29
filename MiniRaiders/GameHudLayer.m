@@ -40,6 +40,19 @@
 	return self;
 }
 
+- (void) showOverlay:(NSString*)filename
+{
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    _overlay = [CCSprite spriteWithFile:filename];
+    [_overlay setPosition:ccp(winSize.width/2,winSize.height/2)];
+    [self addChild:_overlay];
+}
+
+- (void) hideOverlay
+{
+    [self removeChild:_overlay cleanup:YES];
+}
+
 - (NSString*) stringFromInterval:(NSTimeInterval)interval
 {
     int minute = floor(interval/60);

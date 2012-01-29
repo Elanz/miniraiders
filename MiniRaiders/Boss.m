@@ -33,23 +33,24 @@
 - (void) chooseTarget
 {
     float highDmg = 0;
+    Entity * newTarget;
     for (NSNumber * entityId in [_threatTable allKeys])
     {
         float thisDmg = [((NSNumber*)[_threatTable objectForKey:entityId]) floatValue];
         if (thisDmg > highDmg)
         {
-            self.target = [[Guild sharedGuild] getHeroById:entityId];
-            if (self.target.currentHealth > 0 && [self rangeToTarget] < self.range)
+            Entity * possibleTarget = [[Guild sharedGuild] getHeroById:entityId];
+            if (possibleTarget.currentHealth > 0 && [self rangeToTarget:possibleTarget] < self.range)
             {
                 highDmg = thisDmg;
-            }
-            else 
-            {
-                self.target = nil;
+                newTarget = possibleTarget;
             }
         }
     }
+    
+    self.target = newTarget;
 
+    NSLog(@" target = %@", self.target.namePrefix);
 }
 
 - (void) takeDamage:(float)dmg from:(Entity *)entity

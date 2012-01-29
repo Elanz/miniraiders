@@ -28,6 +28,7 @@
 @synthesize dmgLow;
 @synthesize dmgHigh;
 @synthesize EntityId;
+@synthesize newState = _newState;
 
 - (NSString*) appendNamePrefix:(NSString*)source
 {
@@ -166,10 +167,10 @@
         [self runAction:_currentAnimation];
 }
 
-- (float) rangeToTarget
+- (float) rangeToTarget:(Entity*)entity
 {
-    float distanceToBoss = [Cocos2dUtility distanceBetweenPointsA:self.position B:self.target.position];
-    float bossRadius = (self.target.boundingBox.size.width + self.target.boundingBox.size.height)/2;
+    float distanceToBoss = [Cocos2dUtility distanceBetweenPointsA:self.position B:entity.position];
+    float bossRadius = (entity.boundingBox.size.width + entity.boundingBox.size.height)/2;
     return distanceToBoss - bossRadius;
 }
 
@@ -181,7 +182,7 @@
 
 - (void) attackTarget
 {
-    if ([self rangeToTarget] < self.meleeRange)
+    if ([self rangeToTarget:self.target] < self.meleeRange)
     {
         _newState = entity_melee;
     }
@@ -203,7 +204,7 @@
     {
         [self chooseTarget];
         
-        if (self.target && [self rangeToTarget] < self.range)
+        if (self.target && [self rangeToTarget:self.target] < self.range)
             [self attackTarget];
             
         _timeSinceLastAttack = 0;

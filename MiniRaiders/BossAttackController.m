@@ -52,6 +52,11 @@
 	return _bossAttackScene;
 }
 
+- (void) hideOverlay
+{
+    [_hudLayer hideOverlay];
+}
+
 - (void) start
 {
     [_theBoss setParentController:self];
@@ -59,10 +64,13 @@
     
     self.gameStartTime = [NSDate date];
     [self schedule:@selector(AITick:) interval:0.5f];
+    [_hudLayer showOverlay:@"fight.png"];
+    [self scheduleOnce:@selector(hideOverlay) delay:1.5];
 }
 
 - (void) returnToMainMenu
 {
+    [_hudLayer hideOverlay];
     [self.spriteBatch removeAllChildrenWithCleanup:YES];
     [self.backgroundLayer removeAllChildrenWithCleanup:YES];
     [self.hudLayer removeAllChildrenWithCleanup:YES];
@@ -72,12 +80,14 @@
 
 - (void) doWin
 {
-    [self returnToMainMenu];
+    [_hudLayer showOverlay:@"win.png"];
+    [self scheduleOnce:@selector(returnToMainMenu) delay:1.5];
 }
 
 - (void) doLose
 {
-    [self returnToMainMenu];
+    [_hudLayer showOverlay:@"lose.png"];
+    [self scheduleOnce:@selector(returnToMainMenu) delay:1.5];
 }
 
 - (void) heroDied:(Entity*)hero
