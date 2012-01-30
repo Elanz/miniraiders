@@ -20,6 +20,7 @@
 @synthesize healingDone = _healingDone;
 @synthesize attackCooldown = _attackCooldown;
 @synthesize namePrefix = _namePrefix;
+@synthesize fullName = _fullName;
 @synthesize parentController = _parentController;
 @synthesize goal = _goal;
 @synthesize pixelsPerSecond = _pixelsPerSecond;
@@ -32,6 +33,7 @@
 @synthesize healHigh = _healHigh;
 @synthesize entityId = _entityId;
 @synthesize newState = _newState;
+@synthesize defense = _defense;
 
 - (NSString*) appendNamePrefix:(NSString*)source
 {
@@ -65,9 +67,8 @@
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     [_parentController.spriteBatch addChild:self];
-    _state = entity_idle;
+    _newState = entity_idle;
     [self runAction:[self callBackAction:_idle]];
-    [self setPosition:ccp(winSize.width/2,winSize.height-120)];
     
     _entityHealthBar = [CCProgressTimer progressWithSprite:[CCSprite spriteWithSpriteFrameName:[self appendNamePrefix:@"%@_healthbar.png"]]];
     _entityHealthBar.type = kCCProgressTimerTypeBar;
@@ -91,9 +92,10 @@
     if (self.currentHealth <= 0)
         return;
     
-    if (!CGPointEqualToPoint(_goal, newGoal))
+    _goal = newGoal;
+    
+    if (!CGPointEqualToPoint(self.position, _goal))
     {
-        _goal = newGoal;
         _newState = entity_walk;
         double distance = [Cocos2dUtility distanceBetweenPointsA:self.position B:_goal];
         double duration = distance / self.pixelsPerSecond;
@@ -172,14 +174,20 @@
 
 - (double) rangeToTarget:(Entity*)entity
 {
-    double distanceToBoss = [Cocos2dUtility distanceBetweenPointsA:self.position B:entity.position];
-    double bossRadius = (entity.boundingBox.size.width + entity.boundingBox.size.height)/2;
-    return distanceToBoss - bossRadius;
+    double distance = [Cocos2dUtility distanceBetweenPointsA:self.position B:entity.position];
+    double entityRadius = fmin(entity.boundingBox.size.width, entity.boundingBox.size.height)/2;
+    return distance - entityRadius;
 }
 
 - (void) takeDamage:(double)dmg from:(Entity*)entity
 {
     self.currentHealth -= dmg;    
+    if (self.currentHealth <= 0) 
+    {
+        self.currentHealth = 0;
+        self.goal = self.position;
+        [self cancelMovement];
+    }
     _entityHealthBar.percentage = (self.currentHealth/self.totalHealth)*100;
 }
 

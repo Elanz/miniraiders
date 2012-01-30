@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		725795AD14D5A7230024208F /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725795AC14D5A7230024208F /* MainGameController.m */; };
+		725795AD14D5A7230024208F /* MainGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 725795AC14D5A7230024208F /* MainGameController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		725795B114D5A9350024208F /* atkoff_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 725795AE14D5A9350024208F /* atkoff_btn.png */; };
 		725795B214D5A9350024208F /* atkon_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 725795AF14D5A9350024208F /* atkon_btn.png */; };
 		725795B314D5A9350024208F /* bottom_panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 725795B014D5A9350024208F /* bottom_panel.png */; };
@@ -26,6 +26,7 @@
 		725F271114D214DF002D92CC /* top_score_panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 725F271014D214DF002D92CC /* top_score_panel.png */; };
 		725F28BE14D23EAA002D92CC /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F28BD14D23EA9002D92CC /* Boss.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		727B9DCF14D3449B0059BC07 /* BossAttackInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727B9DCE14D3449B0059BC07 /* BossAttackInputController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72A2601F14D5F9EB00AB2C74 /* Healer.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A2601E14D5F9EB00AB2C74 /* Healer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72A3D53B14CF05FA00400D17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53A14CF05FA00400D17 /* QuartzCore.framework */; };
 		72A3D53D14CF05FA00400D17 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53C14CF05FA00400D17 /* OpenGLES.framework */; };
 		72A3D53F14CF05FA00400D17 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53E14CF05FA00400D17 /* OpenAL.framework */; };
@@ -164,7 +165,6 @@
 		72B132B014D32EDF006D8C66 /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B132AE14D32EDF006D8C66 /* sprites.png */; };
 		72B132B314D331DB006D8C66 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B214D331DA006D8C66 /* Entity.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72B132B614D33455006D8C66 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B514D33455006D8C66 /* Hero.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		72B132B914D3359D006D8C66 /* Wizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132B814D3359D006D8C66 /* Wizard.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72B132BC14D335F4006D8C66 /* Ranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B132BB14D335F4006D8C66 /* Ranger.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -194,6 +194,8 @@
 		725F28BD14D23EA9002D92CC /* Boss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Boss.m; sourceTree = "<group>"; };
 		727B9DCD14D3449B0059BC07 /* BossAttackInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BossAttackInputController.h; sourceTree = "<group>"; };
 		727B9DCE14D3449B0059BC07 /* BossAttackInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BossAttackInputController.m; sourceTree = "<group>"; };
+		72A2601D14D5F9EB00AB2C74 /* Healer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Healer.h; sourceTree = "<group>"; };
+		72A2601E14D5F9EB00AB2C74 /* Healer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Healer.m; sourceTree = "<group>"; };
 		72A3D53614CF05FA00400D17 /* MiniRaiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRaiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A3D53A14CF05FA00400D17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		72A3D53C14CF05FA00400D17 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -451,8 +453,6 @@
 		72B132B214D331DA006D8C66 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 		72B132B414D33455006D8C66 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		72B132B514D33455006D8C66 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
-		72B132B714D3359D006D8C66 /* Wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wizard.h; sourceTree = "<group>"; };
-		72B132B814D3359D006D8C66 /* Wizard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wizard.m; sourceTree = "<group>"; };
 		72B132BA14D335F4006D8C66 /* Ranger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranger.h; sourceTree = "<group>"; };
 		72B132BB14D335F4006D8C66 /* Ranger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ranger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -652,12 +652,12 @@
 		72B12A7214D3051A006D8C66 /* heroes */ = {
 			isa = PBXGroup;
 			children = (
+				72A2601D14D5F9EB00AB2C74 /* Healer.h */,
+				72A2601E14D5F9EB00AB2C74 /* Healer.m */,
 				72B132BA14D335F4006D8C66 /* Ranger.h */,
 				72B132BB14D335F4006D8C66 /* Ranger.m */,
 				72B12A7314D3054A006D8C66 /* Warrior.h */,
 				72B12A7414D3054A006D8C66 /* Warrior.m */,
-				72B132B714D3359D006D8C66 /* Wizard.h */,
-				72B132B814D3359D006D8C66 /* Wizard.m */,
 				72B132B414D33455006D8C66 /* Hero.h */,
 				72B132B514D33455006D8C66 /* Hero.m */,
 			);
@@ -1171,10 +1171,10 @@
 				72B1327E14D3176C006D8C66 /* vec4.c in Sources */,
 				72B132B314D331DB006D8C66 /* Entity.m in Sources */,
 				72B132B614D33455006D8C66 /* Hero.m in Sources */,
-				72B132B914D3359D006D8C66 /* Wizard.m in Sources */,
 				72B132BC14D335F4006D8C66 /* Ranger.m in Sources */,
 				727B9DCF14D3449B0059BC07 /* BossAttackInputController.m in Sources */,
 				725795AD14D5A7230024208F /* MainGameController.m in Sources */,
+				72A2601F14D5F9EB00AB2C74 /* Healer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

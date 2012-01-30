@@ -25,7 +25,12 @@
         self.dmgHigh = 20;
         self.threatFactor = 1.1;
         _timeSinceLastAttack = 0;
+        self.abilityCooldown = 3.0;
+        self.timeSinceLastAbilityUse = 0;
         self.pixelsPerSecond = 30.0;
+        self.defense = 2;
+        self.attackOn = NO;
+        self.className = @"Ranger";
     }
     return self;
 }

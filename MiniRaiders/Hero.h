@@ -14,7 +14,13 @@
 @property (nonatomic, readwrite) int xp;
 @property (nonatomic, readwrite) int level;
 @property (nonatomic, readwrite) double threatFactor;
+@property (nonatomic, retain) NSString * className;
+@property (nonatomic, readwrite) BOOL attackOn;
+@property (nonatomic, retain) CCSprite * abilityBtnSprite;
+@property (nonatomic, readwrite) double abilityCooldown;
+@property (nonatomic, readwrite) double timeSinceLastAbilityUse;
 
 - (void) chooseTarget;
+- (void) performSpecialAbility;
 
 @end

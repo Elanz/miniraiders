@@ -34,8 +34,6 @@
     
     CCProgressTimer * _entityHealthBar;
     
-    CCNode * _entityGroup;
-    
     int _state;
     int _newState;
     double _timeSinceLastAttack;
@@ -69,13 +67,16 @@
 @property (nonatomic, readwrite) double dmgHigh;
 @property (nonatomic, readwrite) double healLow;
 @property (nonatomic, readwrite) double healHigh;
+@property (nonatomic, readwrite) double defense;
 @property (nonatomic, retain) NSString * namePrefix;
+@property (nonatomic, retain) NSString * fullName;
 @property (nonatomic, retain) BossAttackController * parentController;
 @property (nonatomic, readwrite) CGPoint goal;
 @property (nonatomic, retain) Entity * target;
 @property (nonatomic, retain) NSNumber * entityId;
 @property (nonatomic, readwrite) int newState;
 
+- (NSString*) appendNamePrefix:(NSString*)source;
 - (id) initWithNamePrefix:(NSString*)prefix;
 - (void) AITick:(ccTime)dt;
 - (void) AnimationComplete;

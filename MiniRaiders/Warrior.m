@@ -19,13 +19,18 @@
         self.attackCooldown = 1.0;
         self.xp = 0;
         self.level = 1;
-        self.meleeRange = 20;
-        self.spellRange = 20;
+        self.meleeRange = 50;
+        self.spellRange = 50;
         self.dmgLow = 10;
         self.dmgHigh = 15;
         self.threatFactor = 2.0;
         _timeSinceLastAttack = 0;
+        self.abilityCooldown = 5.0;
+        self.timeSinceLastAbilityUse = 0;
         self.pixelsPerSecond = 20.0;
+        self.defense = 3;
+        self.attackOn = NO;
+        self.className = @"Warrior";
     }
     return self;
 }

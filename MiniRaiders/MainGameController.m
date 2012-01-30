@@ -12,7 +12,7 @@
 #import "Entity.h"
 #import "Warrior.h"
 #import "Ranger.h"
-#import "Wizard.h"
+#import "Healer.h"
 
 @implementation MainGameController
 
@@ -23,10 +23,13 @@
     _theGuild = [[Guild alloc] init];
     Entity * hero1 = [[Warrior alloc] init];
     Entity * hero2 = [[Ranger alloc] init];
-    Entity * hero3 = [[Wizard alloc] init];
+    Entity * hero3 = [[Healer alloc] init];
     hero1.EntityId = [NSNumber numberWithInt:1];
     hero2.EntityId = [NSNumber numberWithInt:2];
     hero3.EntityId = [NSNumber numberWithInt:3];
+    hero1.fullName = @"Bob";
+    hero2.fullName = @"XXXXXXXX";
+    hero3.fullName = @"Timmy";
     [_theGuild.Heroes addObject:hero1];
     [_theGuild.Heroes addObject:hero2];
     [_theGuild.Heroes addObject:hero3];

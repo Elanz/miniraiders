@@ -1,5 +1,5 @@
 //
-//  Wizard.h
+//  Healer.h
 //  MiniRaiders
 //
 //  Created by elanz on 1/27/12.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Hero.h"
 
-@interface Wizard : Hero
+@interface Healer : Hero
 
 @end

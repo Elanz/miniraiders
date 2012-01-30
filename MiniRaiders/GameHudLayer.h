@@ -19,6 +19,15 @@
     CCSprite * _overlay;
     CCSprite * _bottomPanel;
     Entity * _bottomPanelEntity;
+    CCLabelTTF * _bottomPanelHeaderLabel;
+    CCLabelTTF * _bottomPanelAtkLabel;
+    CCLabelTTF * _bottomPanelDefLabel;
+    CCLabelTTF * _bottomPanelHPLabel;
+    CCLabelTTF * _bottomPanelHealLabel;
+    CCLabelTTF * _bottomPanelLeftLabel;
+    CCLabelTTF * _bottomPanelRightLabel;
+    CCSprite * _attackOn;
+    CCSprite * _attackOff;
 }
 
 @property (nonatomic, assign) BossAttackController * bossAttackController;
@@ -29,7 +38,6 @@
 - (void) hideOverlay;
 - (void) showBottomPanelForEntity:(Entity*)entity;
 - (void) hideBottomPanel;
-- (void) bottomPanelTouchLeft;
-- (void) bottomPanelTouchRight;
+- (void) handleTap:(CGPoint)location;
 
 @end

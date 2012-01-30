@@ -10,8 +10,16 @@
 #import "Guild.h"
 #import "Hero.h"
 #import "Cocos2dUtility.h"
+#import "BossAttackController.h"
 
 @implementation Boss
+
+@synthesize ability1BtnSprite = _ability1BtnSprite;
+@synthesize ability2BtnSprite = _ability2BtnSprite;
+@synthesize ability1Cooldown = _ability1Cooldown;
+@synthesize timeSinceLastAbility1Use = _timeSinceLastAbility1Use;
+@synthesize ability2Cooldown = _ability2Cooldown;
+@synthesize timeSinceLastAbility2Use = _timeSinceLastAbility2Use;
 
 - (id) init
 {
@@ -20,12 +28,18 @@
         self.totalHealth = 1000;
         self.currentHealth = 1000;
         self.attackCooldown = 1.5;
-        _timeSinceLastAttack = 0;        
-        self.meleeRange = 120;
-        self.spellRange = 200;
+        _timeSinceLastAttack = 0;   
+        _ability1Cooldown = 5.0;
+        _ability2Cooldown = 3.0;
+        _timeSinceLastAbility1Use = 0;
+        _timeSinceLastAbility2Use = 0;
+        self.meleeRange = 100;
+        self.spellRange = 180;
         self.dmgLow = 5;
         self.dmgHigh = 10;
         self.pixelsPerSecond = 10;
+        self.fullName = @"Prototype Boss";
+        self.defense = 4;
         _threatTable = [NSMutableDictionary dictionary];
         _patrolPoints = [NSMutableArray array];
     }
@@ -35,6 +49,15 @@
 - (void) setParentController:(BossAttackController *)parent
 {
     [super setParentController:parent];
+    
+    _ability1BtnSprite = [CCSprite spriteWithSpriteFrameName:[self appendNamePrefix:@"%@_special1btn.png"]];
+    [_ability1BtnSprite setAnchorPoint:ccp(0,1)];
+    [_parentController.spriteBatch addChild:_ability1BtnSprite];
+    [_ability1BtnSprite setVisible:NO];
+    _ability2BtnSprite = [CCSprite spriteWithSpriteFrameName:[self appendNamePrefix:@"%@_special2btn.png"]];
+    [_ability2BtnSprite setAnchorPoint:ccp(0,1)];
+    [_parentController.spriteBatch addChild:_ability2BtnSprite];
+    [_ability2BtnSprite setVisible:NO];
     
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     double quarterScreenWidth = winSize.width/4;
@@ -144,14 +167,6 @@
     self.damageDone += damage;
 }
 
-- (void) movementComplete
-{
-    [super movementComplete];
-    
-    if (!self.target)
-        [self walkToNextPatrolPoint];
-}
-
 - (void) walkToNextPatrolPoint
 {
     _currentPatrolPoint ++;
@@ -162,16 +177,28 @@
     self.goal = newGoal;
 }
 
+- (void) movementComplete
+{
+    [super movementComplete];
+    
+    if (!self.target)
+        [self walkToNextPatrolPoint];
+}
+
 - (void) AITick:(ccTime)dt
 {
     [super AITick:dt];
+    
+    _timeSinceLastAbility1Use += dt;
+    _timeSinceLastAbility2Use += dt;
     
     if (self.target)
     {
         CGPoint newGoal = self.target.position;
         double targetHeight = self.target.boundingBox.size.height;
         double myHeight = self.boundingBox.size.height;
-        if (self.target.boundingBox.origin.y > self.boundingBox.origin.y)
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+        if (self.target.boundingBox.origin.y > winSize.height - self.boundingBox.size.height)
         {
             newGoal.y -= (targetHeight/2)+(myHeight/2);
         }

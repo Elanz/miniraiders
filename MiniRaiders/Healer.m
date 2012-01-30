@@ -1,17 +1,17 @@
 //
-//  Wizard.m
+//  Healer.m
 //  MiniRaiders
 //
 //  Created by elanz on 1/27/12.
 //  Copyright (c) 2012 200Monkeys. All rights reserved.
 //
 
-#import "Wizard.h"
+#import "Healer.h"
 #import "Guild.h"
 #import "BossAttackController.h"
 #import "Boss.h"
 
-@implementation Wizard
+@implementation Healer
 
 - (id) init
 {
@@ -19,7 +19,7 @@
     {
         self.totalHealth = 80;
         self.currentHealth = 80;
-        self.attackCooldown = 1.5;
+        self.attackCooldown = 1.8;
         self.xp = 0;
         self.level = 1;
         self.meleeRange = 15;
@@ -30,7 +30,12 @@
         self.healHigh = 20;
         self.threatFactor = 0.9;
         _timeSinceLastAttack = 0;
+        self.abilityCooldown = 10.0;
+        self.timeSinceLastAbilityUse = 0;
         self.pixelsPerSecond = 25.0;
+        self.defense = 1;
+        self.attackOn = NO;
+        self.className = @"Healer";
     }
     return self;
 }
@@ -47,12 +52,20 @@
         }
     }
     
-    if (newTarget) self.target = newTarget;
+    if (newTarget) {
+        double targetHPPercent = ((newTarget.currentHealth/newTarget.totalHealth) * 100);
+        if (targetHPPercent < 60)
+            self.target = newTarget;
+        else self.target = _parentController.theBoss;
+    }
     else self.target = _parentController.theBoss;
 }
 
 - (void) attackTarget
 {
+    if (!self.attackOn)
+        return;
+    
     _newState = entity_range;
     if ([self.target isKindOfClass:[Boss class]])
     {

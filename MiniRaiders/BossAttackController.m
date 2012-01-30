@@ -57,15 +57,24 @@
     [_hudLayer hideOverlay];
 }
 
+- (void) gameStart
+{
+    [self hideOverlay];
+    [self schedule:@selector(AITick:) interval:0.1f];
+}
+
 - (void) start
 {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
     [_theBoss setParentController:self];
+    [_theBoss setPosition:ccp(winSize.width/2,winSize.height-120)];
+    [_theBoss setGoal:ccp(winSize.width/2,winSize.height-120)];
     [[Guild sharedGuild] prepareForBossAttack:self];
     
     self.gameStartTime = [NSDate date];
-    [self schedule:@selector(AITick:) interval:0.1f];
     [_hudLayer showOverlay:@"fight.png"];
-    [self scheduleOnce:@selector(hideOverlay) delay:1.5];
+    [self scheduleOnce:@selector(gameStart) delay:1.5];
 }
 
 - (void) returnToMainMenu
@@ -127,6 +136,10 @@
     {
         if (!CGPointEqualToPoint(hero.position, hero.goal))
             ccDrawLine(hero.position, hero.goal);
+    }
+    if (_hudLayer.bottomPanelEntity)
+    {
+        ccDrawCircle(_hudLayer.bottomPanelEntity.position, _hudLayer.bottomPanelEntity.spellRange, 360.0, 100, NO);
     }
 }
 

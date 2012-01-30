@@ -60,6 +60,7 @@
         hero.damageDone = 0;
         hero.currentHealth = hero.totalHealth;
         hero.newState = entity_idle;
+        hero.attackOn = NO;
         [hero setParentController:controller];
         [hero setPosition:ccp(startX, startY)];
         [hero setGoal:ccp(startX, startY)];

@@ -30,11 +30,11 @@
 - (void)rebuildEntityList
 {
     [_entityList removeAllObjects];
-    [_entityList addObject:_bossAttackController.theBoss];
     for (Entity * hero in [Guild sharedGuild].Heroes)
     {
         [_entityList addObject:hero];
     }
+    [_entityList addObject:_bossAttackController.theBoss];
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -59,7 +59,7 @@
     }
     if (!entitySelected)
     {
-        [_bossAttackController.hudLayer hideBottomPanel];
+        [_bossAttackController.hudLayer handleTap:loc];
     }
 }
 
@@ -86,6 +86,12 @@
             break;
         }
     }
+    
+    if (CGRectContainsPoint(_entityBeingTracked.boundingBox, loc))
+    {
+        [_entityBeingTracked cancelMovement];
+    }
+    
     _entityBeingTracked = nil;
 }
 
