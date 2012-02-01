@@ -40,6 +40,7 @@
     
     NSString * _namePrefix;
     Entity * _target;
+    CGPoint _oldgoal;
     CGPoint _goal;
     double _totalHealth;
     double _currentHealth;
@@ -53,6 +54,8 @@
     double _dmgHigh;
     double _healLow;
     double _healHigh;
+    
+    double _angle;
 }
 
 @property (nonatomic, readwrite) double totalHealth;

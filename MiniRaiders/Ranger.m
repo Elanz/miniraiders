@@ -7,6 +7,8 @@
 //
 
 #import "Ranger.h"
+#import "BossAttackController.h"
+#import "GameplayLayer.h"
 
 @implementation Ranger
 

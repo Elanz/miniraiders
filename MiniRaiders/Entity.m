@@ -82,6 +82,7 @@
 {
     if (CGPointEqualToPoint(_goal, self.position))
     {
+        _angle = 90;
         _newState = entity_idle;
         _currentMoveAction = nil;
     }
@@ -92,6 +93,7 @@
     if (self.currentHealth <= 0)
         return;
     
+    _oldgoal = _goal;
     _goal = newGoal;
     
     if (!CGPointEqualToPoint(self.position, _goal))
@@ -103,6 +105,19 @@
         [_entityHealthBar stopAllActions];
         _currentMoveAction = [Cocos2dUtility callBackActionWithAction:[CCMoveTo actionWithDuration:duration position:_goal] target:self sel:@selector(movementComplete)];
         [self runAction:_currentMoveAction];
+
+        CGPoint firstVector = ccpSub(_oldgoal, self.position);
+        CGFloat firstRotateAngle = -ccpToAngle(firstVector);
+        CGFloat previousTouch = CC_RADIANS_TO_DEGREES(firstRotateAngle);
+        
+        CGPoint vector = ccpSub(_goal, self.position);
+        CGFloat rotateAngle = -ccpToAngle(vector);
+        CGFloat currentTouch = CC_RADIANS_TO_DEGREES(rotateAngle);
+        
+        _angle += currentTouch - previousTouch;
+        _angle = fmod(_angle,360.0);
+        
+        [self runAction:[CCRotateTo actionWithDuration:0.2 angle:_angle]];
     }
 }
 
@@ -124,6 +139,7 @@
     if( (self=[super initWithSpriteFrameName:[NSString stringWithFormat:@"%@_dead2.png", prefix]])) {
         self.namePrefix = prefix;
         _goal = CGPointZero;
+        _angle = 90;
     }
     return self;
 }

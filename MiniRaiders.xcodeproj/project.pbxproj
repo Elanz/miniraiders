@@ -27,6 +27,7 @@
 		725F28BE14D23EAA002D92CC /* Boss.m in Sources */ = {isa = PBXBuildFile; fileRef = 725F28BD14D23EA9002D92CC /* Boss.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		727B9DCF14D3449B0059BC07 /* BossAttackInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727B9DCE14D3449B0059BC07 /* BossAttackInputController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		72A2601F14D5F9EB00AB2C74 /* Healer.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A2601E14D5F9EB00AB2C74 /* Healer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		72A2602214D6343A00AB2C74 /* arrow.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72A2602114D6343A00AB2C74 /* arrow.plist */; };
 		72A3D53B14CF05FA00400D17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53A14CF05FA00400D17 /* QuartzCore.framework */; };
 		72A3D53D14CF05FA00400D17 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53C14CF05FA00400D17 /* OpenGLES.framework */; };
 		72A3D53F14CF05FA00400D17 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A3D53E14CF05FA00400D17 /* OpenAL.framework */; };
@@ -196,6 +197,7 @@
 		727B9DCE14D3449B0059BC07 /* BossAttackInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BossAttackInputController.m; sourceTree = "<group>"; };
 		72A2601D14D5F9EB00AB2C74 /* Healer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Healer.h; sourceTree = "<group>"; };
 		72A2601E14D5F9EB00AB2C74 /* Healer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Healer.m; sourceTree = "<group>"; };
+		72A2602114D6343A00AB2C74 /* arrow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = arrow.plist; path = Resources/particles/arrow.plist; sourceTree = "<group>"; };
 		72A3D53614CF05FA00400D17 /* MiniRaiders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRaiders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A3D53A14CF05FA00400D17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		72A3D53C14CF05FA00400D17 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -528,6 +530,14 @@
 			name = bossAttack;
 			sourceTree = "<group>";
 		};
+		72A2602014D6340200AB2C74 /* particles */ = {
+			isa = PBXGroup;
+			children = (
+				72A2602114D6343A00AB2C74 /* arrow.plist */,
+			);
+			name = particles;
+			sourceTree = "<group>";
+		};
 		72A3D52B14CF05FA00400D17 = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +600,7 @@
 		72A3D54D14CF05FA00400D17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				72A2602014D6340200AB2C74 /* particles */,
 				725F270D14D206F6002D92CC /* fields */,
 				725F26B014D1CD73002D92CC /* gui */,
 				72B132AD14D32EDF006D8C66 /* sprites.plist */,
@@ -1054,6 +1065,7 @@
 				725795B114D5A9350024208F /* atkoff_btn.png in Resources */,
 				725795B214D5A9350024208F /* atkon_btn.png in Resources */,
 				725795B314D5A9350024208F /* bottom_panel.png in Resources */,
+				72A2602214D6343A00AB2C74 /* arrow.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

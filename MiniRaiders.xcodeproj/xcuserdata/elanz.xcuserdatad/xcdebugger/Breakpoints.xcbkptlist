@@ -93,11 +93,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349564802.127233"
+         timestampString = "349753889.824257"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
          landmarkName = "-setGoal:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -121,11 +121,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349564802.127233"
+         timestampString = "349753889.824257"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
          landmarkName = "-setGoal:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -135,11 +135,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349564802.127233"
+         timestampString = "349753889.824257"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-movementComplete"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,27 +177,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349566144.545074"
+         timestampString = "349753889.824257"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "218"
-         endingLineNumber = "218"
+         startingLineNumber = "234"
+         endingLineNumber = "234"
          landmarkName = "-AITick:"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "MiniRaiders/Entity.m"
-         timestampString = "349565139.57001"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
-         landmarkName = "@implementation Entity"
-         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -495,11 +481,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MiniRaiders/Entity.m"
-         timestampString = "349567226.21854"
+         timestampString = "349753889.824257"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "177"
-         endingLineNumber = "177"
+         startingLineNumber = "193"
+         endingLineNumber = "193"
          landmarkName = "-rangeToTarget:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -527,6 +513,19 @@
          startingLineNumber = "188"
          endingLineNumber = "188"
          landmarkName = "-updateBottomPanel"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MiniRaiders/Entity.m"
+         timestampString = "349753889.824257"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "120"
+         endingLineNumber = "120"
+         landmarkName = "-setGoal:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
